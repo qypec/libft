@@ -6,17 +6,41 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/03 17:26:35 by yquaro            #+#    #+#             */
-/*   Updated: 2019/05/03 21:51:24 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/05/03 22:32:38 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ctime.h"
 
+static int	leapsyear(int year)
+{
+	if ((year % 4 == 0 && year % 100) || year % 400 == 0)
+		return (366);
+	return (365); 
+}
+
+t_cdate		*getyear(t_cdate *date, time_t ttime)
+{
+	int		tmp;
+	int		day;
+	int		year;
+
+	day = 0;
+	year = START_YEAR - 1;
+	tmp = ((int)ttime) / (60 * 60 * 24);
+	while (day <= tmp)
+	{
+		year++;
+		day += leapsyear(year);
+	}
+	date->year_n = year;
+	return (date);
+}
+
 t_cdate		*gettime(t_cdate *date, const time_t *res)
 {
 	time_t	min;
 	time_t	sec;
-	time_t	tmp;
 	time_t	hour;
 
 	min = *res / 60;
@@ -44,45 +68,5 @@ t_cdate		*getweekday(t_cdate *date, const time_t *res)
 		date->weekday_n -= 7;
 	// printf("res = %ld\n", *res);
 	// printf("date->weekday = %d\n", date->weekday_n);
-	return (date);		
-}
-
-static int	multiply_coeff(int coefficient[], int i)
-{
-	time_t	tmp;
-	int		j;
-
-	tmp = 1;
-	j = i;
-	while (j--)
-		tmp *= coefficient[j];
-	return (tmp * coefficient[i]);
-}
-
-t_cdate		*getday(t_cdate *date, time_t ttime, time_t *res)
-{
-	time_t	tmp;
-	int		coefficient[4];
-	int		i;
-
-	i = 0;
-	tmp = 0;
-	coefficient[0] = 1;
-	coefficient[1] = 60;
-	coefficient[2] = 60;
-	coefficient[3] = 24;
-	while (ttime != 0 && i != 3)
-	{
-		if ((tmp = ttime / coefficient[i + 1]) == 0)
-			*res += multiply_coeff(coefficient, i) * ttime;
-		else
-		{
-			if (ttime - (tmp * coefficient[i + 1]) != 0)
-				*res += multiply_coeff(coefficient, i) * (ttime - (tmp * coefficient[i + 1]));
-		}
-		ttime = tmp;
-		i++;
-	}
-	date->day_n = tmp;
 	return (date);
 }

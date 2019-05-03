@@ -65,9 +65,10 @@ t_cdate				*ft_uctime(const time_t *ttime)
 	tsec = (time_t)*ttime + DEL_CTIME_UNIX_SYS;
 	res = 0;
 	date = nullifydate();
-	date = getday(date, tsec, &res); /* date->day_n = количеству дней с 1970 года */
+	date = getday_since1970(date, tsec, &res); /* date->day_n since 1970 year */
 	date = getweekday(date, (const time_t *)&res);
 	date = gettime(date, (const time_t *)&res);
+	date = getyear(date, tsec);
 
 	// print_struct(date);
 	// printf("res = %ld\n", res);

@@ -6,7 +6,7 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/01 18:34:50 by yquaro            #+#    #+#             */
-/*   Updated: 2019/05/03 21:36:45 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/05/03 22:16:18 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 
 # define WEEKDAY_OF_JANUARY_1ST_1970 4 /* Thursday */
 # define DEL_CTIME_UNIX_SYS 10800 /* 3 hours */
+# define START_YEAR	1970
 
 typedef struct		s_cdate
 {
@@ -45,11 +46,17 @@ t_cdate				*ft_uctime(const time_t *ttime);
 
 /* --------- */
 
+/* get_temporary */
+
+t_cdate				*getday_since1970(t_cdate *date, const time_t ttime, time_t *res);
+
+/* ------------- */
+
 /* getdata */
 
-t_cdate				*getday(t_cdate *date, const time_t ttime, time_t *res);
 t_cdate				*getweekday(t_cdate *date, const time_t *res);
 t_cdate				*gettime(t_cdate *date, const time_t *res);
+t_cdate				*getyear(t_cdate *date, time_t ttime);
 
 /* ------- */
 
