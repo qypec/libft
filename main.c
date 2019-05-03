@@ -3,11 +3,12 @@
 
 int main()
 {
-	time_t ttime;
+	time_t 	ttime;
+	t_cdate	*date;
 
 	ttime = time(NULL);
-	printf("real date:\n	%s\n", ctime(&ttime));
-	ft_ctime(ttime);
+	// printf("real date:\n	%s\n", ctime(&ttime));
+	date = ft_uctime(&ttime);
 
 	return (0);
 }

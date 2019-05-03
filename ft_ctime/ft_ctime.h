@@ -6,7 +6,7 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/01 18:34:50 by yquaro            #+#    #+#             */
-/*   Updated: 2019/05/03 14:08:07 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/05/03 18:11:32 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 
 # include "../includes/libft.h"
 # include <time.h>
+# include <stdio.h> // no
 
-typedef struct		s_ctime
+typedef struct		s_cdate
 {
 	char			*weekday;
 	int				weekday_n;
@@ -32,8 +33,10 @@ typedef struct		s_ctime
 	int				sec_n;
 	char			*year;
 	int				year_n;
-}					t_ctime;
+}					t_cdate;
 
-int ft_ctime();
+t_cdate				*ft_uctime(const time_t *ttime);
+void				free_uctime(t_cdate *date);
+t_cdate				*getday(t_cdate *date, const time_t ttime, time_t *res);
 
 #endif
