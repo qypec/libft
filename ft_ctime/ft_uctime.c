@@ -69,8 +69,9 @@ t_cdate				*ft_uctime(const time_t *ttime)
 	date = getweekday(date, (const time_t *)&res);
 	date = gettime(date, (const time_t *)&res);
 	date = getyear(date, tsec);
+	date = getmonth(date);
 
-	// print_struct(date);
+	print_struct(date);
 	// printf("res = %ld\n", res);
 
 
