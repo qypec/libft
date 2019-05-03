@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strswap.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/01 23:40:17 by yquaro            #+#    #+#             */
-/*   Updated: 2019/05/01 19:04:15 by yquaro           ###   ########.fr       */
+/*   Created: 2019/04/17 19:57:50 by yquaro            #+#    #+#             */
+/*   Updated: 2019/05/01 19:04:43 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/libft.h"
 
-int		ft_toupper(int c)
+char	**ft_strswap(char **matrix, int first, int second)
 {
-	if (c >= 'A' && c <= 'Z')
-		return (c);
-	if (c >= 'a' && c <= 'z')
-		return (c - 32);
-	return (c);
+	char	*tmp;
+
+	tmp = ft_strdup(matrix[first]);
+	ft_strdel(&matrix[first]);
+	matrix[first] = ft_strdup(matrix[second]);
+	ft_strdel(&matrix[second]);
+	matrix[second] = ft_strdup(tmp);
+	ft_strdel(&tmp);
+	return (matrix);
 }

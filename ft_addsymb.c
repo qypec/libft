@@ -1,22 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_addsymb.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/01 23:40:17 by yquaro            #+#    #+#             */
-/*   Updated: 2019/05/01 19:04:15 by yquaro           ###   ########.fr       */
+/*   Created: 2019/04/18 17:06:02 by yquaro            #+#    #+#             */
+/*   Updated: 2019/05/01 19:04:16 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/libft.h"
 
-int		ft_toupper(int c)
+char		*ft_addsymb(char *str, char c, int num)
 {
-	if (c >= 'A' && c <= 'Z')
-		return (c);
-	if (c >= 'a' && c <= 'z')
-		return (c - 32);
-	return (c);
+	int		i;
+	int		j;
+	int		len;
+	char	*newstr;
+
+	i = 0;
+	j = 0;
+	if (num < 0)
+		return (NULL);
+	len = ft_strlen(str) + num;
+	newstr = (char *)ft_memalloc(len);
+	while (i < num)
+	{
+		newstr[i] = c;
+		i++;
+	}
+	while (str[j] != '\0')
+	{
+		newstr[i] = str[j];
+		j++;
+		i++;
+	}
+	newstr[i] = '\0';
+	ft_strdel(&str);
+	return (newstr);
 }

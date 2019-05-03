@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/04/20 19:26:56 by yquaro            #+#    #+#              #
-#    Updated: 2019/05/03 14:05:27 by yquaro           ###   ########.fr        #
+#    Created: 2019/05/01 17:26:14 by yquaro            #+#    #+#              #
+#    Updated: 2019/05/03 14:00:37 by yquaro           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,27 +15,21 @@
 # and the r (replace) option replaces old object files with new versions.
 
 # (ranlib)
-# Adds a character index to the archive
+# adds a character index to the archive
 
 FLAGS = -Wall -Wextra -Werror
-SOURCE = ft_*.c
-OBJS = *.o
-OBJDIR = .obj
-NAME = libft.a
+SOURCE = ft_ctime.c
+OBJS = ft_ctime.o
+OBJDIR = ../.obj
 
-all: $(NAME)
-$(NAME):
-	gcc -c $(FLAGS) $(SOURCE)
-	mkdir $(OBJDIR)
+all: 
+	gcc -c $(SOURCE) # не забыть флаги!!!
 	mv $(OBJS) $(OBJDIR)
-	make -C ft_ctime/ all
-	ar rc $(NAME) $(OBJDIR)/$(OBJS)
-	ranlib $(NAME)
 
-clean:
-	rm -rf $(OBJDIR)
 
-fclean: clean
-	rm -f $(NAME)
-
-re: fclean all
+# 	gcc $(FLAGS) $(SOURCE)
+# 	mkdir obj
+# 	mv $(OBJS) obj/$(OBJS)
+# 	ar rc libftctime.a obj/$(OBJS)
+# 	ranlib libftctime.a
+# 	mv libftctime.a obj/

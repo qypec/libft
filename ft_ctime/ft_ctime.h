@@ -1,22 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_ctime.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/01 23:40:17 by yquaro            #+#    #+#             */
-/*   Updated: 2019/05/01 19:04:15 by yquaro           ###   ########.fr       */
+/*   Created: 2019/05/01 18:34:50 by yquaro            #+#    #+#             */
+/*   Updated: 2019/05/03 14:08:07 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#ifndef FT_CTIME_H
+# define FT_CTIME_H
 
-int		ft_toupper(int c)
+# include "../includes/libft.h"
+# include <time.h>
+
+typedef struct		s_ctime
 {
-	if (c >= 'A' && c <= 'Z')
-		return (c);
-	if (c >= 'a' && c <= 'z')
-		return (c - 32);
-	return (c);
-}
+	char			*weekday;
+	int				weekday_n;
+	char			*month;
+	int				month_n;
+	char			*day;
+	int				day_n;
+	char			*hour;
+	int				hour_n;
+	char			*min;
+	int				min_n;
+	char			*sec;
+	int				sec_n;
+	char			*year;
+	int				year_n;
+}					t_ctime;
+
+int ft_ctime();
+
+#endif

@@ -6,7 +6,7 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 12:05:21 by yquaro            #+#    #+#             */
-/*   Updated: 2018/12/08 15:14:01 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/05/03 14:05:01 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stddef.h>
 # include <stdlib.h>
+# include "../ft_ctime/ft_ctime.h"
 
 typedef struct		s_list
 {
@@ -69,6 +70,7 @@ char				**ft_strsplit(char const *s, char c);
 char				*ft_itoa(int n);
 void				ft_putchar(char c);
 void				ft_putstr(char const *s);
+void				ft_puterror(const char *s);
 void				ft_putendl(char const *s);
 void				ft_putnbr(int n);
 void				ft_putchar_fd(char c, int fd);
@@ -87,6 +89,12 @@ int					ft_abs(int num);
 int					ft_pow(int num, int power);
 int					ft_isspace(int c);
 int					ft_numblen(int n);
-char				**ft_matrixfree(char ***ret, int len);
+char				**ft_matrixfree(char ***ret);
+char				**ft_strswap(char **matrix, int first, int second);
+void				ft_putmatrix(char **str);
+char				*ft_strncut(char *str, int n, char *choice);
+char				*ft_strencut(char *str, int n, char *choice);
+char				*ft_addsymb(char *str, char c, int num);
+char				*ft_addsymbend(char *str, char c, int num);
 
 #endif

@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_putmatrix.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/01 23:40:17 by yquaro            #+#    #+#             */
-/*   Updated: 2019/05/01 19:04:15 by yquaro           ###   ########.fr       */
+/*   Created: 2019/04/17 19:57:50 by yquaro            #+#    #+#             */
+/*   Updated: 2019/05/01 19:04:29 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/libft.h"
 
-int		ft_toupper(int c)
+void	ft_putmatrix(char **str)
 {
-	if (c >= 'A' && c <= 'Z')
-		return (c);
-	if (c >= 'a' && c <= 'z')
-		return (c - 32);
-	return (c);
+	int i;
+
+	i = 0;
+	while (str[i] != NULL)
+	{
+		ft_putendl(str[i]);
+		i++;
+	}
 }
