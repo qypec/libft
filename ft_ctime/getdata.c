@@ -6,13 +6,33 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/03 17:26:35 by yquaro            #+#    #+#             */
-/*   Updated: 2019/05/03 21:13:19 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/05/03 21:51:24 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ctime.h"
 
-t_cdate		*getweekday(t_cdate *date, time_t *res)
+t_cdate		*gettime(t_cdate *date, const time_t *res)
+{
+	time_t	min;
+	time_t	sec;
+	time_t	tmp;
+	time_t	hour;
+
+	min = *res / 60;
+	sec = *res - (min * 60);
+	hour = min / 60;
+	min = min - (hour * 60);
+	// printf("min = %ld\n", min);
+	// printf("sec = %ld\n", sec);
+	// printf("hour = %ld\n", hour);
+	date->hour_n = (int)hour;
+	date->min_n = (int)min;
+	date->sec_n = (int)sec;
+	return (date);
+}
+
+t_cdate		*getweekday(t_cdate *date, const time_t *res)
 {
 	time_t	weekday;
 	time_t	tmp;
