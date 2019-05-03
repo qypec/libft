@@ -7,7 +7,8 @@ int main()
 	t_cdate	*date;
 
 	ttime = time(NULL);
-	// printf("real date:\n	%s\n", ctime(&ttime));
+	// ttime = 345600;
+	printf("real date:\n	%s\n", ctime(&ttime));
 	date = ft_uctime(&ttime);
 
 	return (0);

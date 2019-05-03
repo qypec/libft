@@ -58,13 +58,15 @@ void				free_uctime(t_cdate *date)
 
 t_cdate				*ft_uctime(const time_t *ttime)
 {
+	time_t		tsec;
 	t_cdate		*date;
 	time_t		res;
 
+	tsec = (time_t)*ttime + DEL_CTIME_UNIX_SYS;
 	res = 0;
 	date = nullifydate();
-	date = getday(date, (time_t)*ttime, &res); /* date->day_n = количеству дней с 1970 года */
-	
+	date = getday(date, tsec, &res); /* date->day_n = количеству дней с 1970 года */
+	date = getweekday(date, &res);
 
 	// print_struct(date);
 	// printf("res = %ld\n", res);
