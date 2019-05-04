@@ -70,10 +70,8 @@ t_cdate				*ft_uctime(const time_t *ttime)
 	date = gettime(date, (const time_t *)&res);
 	date = getyear(date, tsec);
 	date = getmonth(date);
-
+	date = struct_to_str(date);
 	print_struct(date);
 	// printf("res = %ld\n", res);
-
-
 	return (date);
 }

@@ -18,8 +18,8 @@
 # adds a character index to the archive
 
 FLAGS = -Wall -Wextra -Werror
-SOURCE = ft_uctime.c getdata.c get_temporarydata.c
-OBJS = ft_uctime.o getdata.o get_temporarydata.o
+SOURCE = ft_uctime.c ft_ctime.c getdata.c get_temporarydata.c struct_to_str.c
+OBJS = ft_uctime.o ft_ctime.o getdata.o get_temporarydata.o struct_to_str.o
 OBJDIR = ../.obj
 
 all: 

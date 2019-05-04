@@ -39,12 +39,24 @@ typedef struct		s_cdate
 	int				year_n;
 }					t_cdate;
 
+/* ft_ctime */
+
+char				*ft_ctime(const time_t *ttime);
+
+/* -------- */
+
 /* ft_uctime */
 
 void				free_uctime(t_cdate *date);
 t_cdate				*ft_uctime(const time_t *ttime);
 
 /* --------- */
+
+/* struct_to_str */
+
+t_cdate				*struct_to_str(t_cdate *date);
+
+/* ------------- */
 
 /* get_temporary */
 
