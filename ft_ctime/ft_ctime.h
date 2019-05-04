@@ -6,7 +6,7 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/01 18:34:50 by yquaro            #+#    #+#             */
-/*   Updated: 2019/05/03 22:48:26 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/05/04 19:20:25 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 
 # include "../includes/libft.h"
 # include <time.h>
-# include <stdio.h> // no
 
-# define WEEKDAY_OF_JANUARY_1ST_1970 4 /* Thursday */
-# define DEL_CTIME_UNIX_SYS 10800 /* 3 hours */
+# define WEEKDAY_OF_JANUARY_1ST_1970 4
+# define DEL_CTIME_UNIX_SYS 10800
 # define START_YEAR	1970
+# define NUMBER_OF_SPACES 7
 
 typedef struct		s_cdate
 {
@@ -39,38 +39,19 @@ typedef struct		s_cdate
 	int				year_n;
 }					t_cdate;
 
-/* ft_ctime */
-
 char				*ft_ctime(const time_t *ttime);
-
-/* -------- */
-
-/* ft_uctime */
 
 void				free_uctime(t_cdate *date);
 t_cdate				*ft_uctime(const time_t *ttime);
 
-/* --------- */
-
-/* struct_to_str */
-
 t_cdate				*struct_to_str(t_cdate *date);
 
-/* ------------- */
+t_cdate				*getday_since1970(t_cdate *date, \
+	const time_t ttime, time_t *res);
 
-/* get_temporary */
-
-t_cdate				*getday_since1970(t_cdate *date, const time_t ttime, time_t *res);
-
-/* ------------- */
-
-/* getdata */
-
-t_cdate				*getweekday(t_cdate *date, const time_t *res);
+t_cdate				*getweekday(t_cdate *date);
 t_cdate				*gettime(t_cdate *date, const time_t *res);
 t_cdate				*getyear(t_cdate *date, time_t ttime);
 t_cdate				*getmonth(t_cdate *date);
-
-/* ------- */
 
 #endif

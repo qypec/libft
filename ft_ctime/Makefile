@@ -6,7 +6,7 @@
 #    By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/01 17:26:14 by yquaro            #+#    #+#              #
-#    Updated: 2019/05/03 21:57:57 by yquaro           ###   ########.fr        #
+#    Updated: 2019/05/04 19:19:14 by yquaro           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,18 +18,10 @@
 # adds a character index to the archive
 
 FLAGS = -Wall -Wextra -Werror
-SOURCE = ft_uctime.c ft_ctime.c getdata.c get_temporarydata.c struct_to_str.c
-OBJS = ft_uctime.o ft_ctime.o getdata.o get_temporarydata.o struct_to_str.o
+SOURCE = ft_uctime.c ft_ctime.c getdata.c getmonth.c get_temporarydata.c struct_to_str.c
+OBJS = ft_uctime.o ft_ctime.o getdata.o getmonth.o get_temporarydata.o struct_to_str.o
 OBJDIR = ../.obj
 
 all: 
-	gcc -g -c $(SOURCE) # не забыть флаги!!!
+	gcc -c $(FLAGS) $(SOURCE)
 	mv $(OBJS) $(OBJDIR)
-
-
-# 	gcc $(FLAGS) $(SOURCE)
-# 	mkdir obj
-# 	mv $(OBJS) obj/$(OBJS)
-# 	ar rc libftctime.a obj/$(OBJS)
-# 	ranlib libftctime.a
-# 	mv libftctime.a obj/

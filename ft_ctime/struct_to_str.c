@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   struct_to_str.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/05/04 19:08:49 by yquaro            #+#    #+#             */
+/*   Updated: 2019/05/04 19:17:06 by yquaro           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_ctime.h"
 
 static char			*digit_to_str(int num)
@@ -18,62 +30,60 @@ static char			*digit_to_str(int num)
 	else
 		return (ft_itoa(num));
 	return (str);
-
 }
 
-static char			*whatsmonth(int month)
+static const char	*whatsmonth(int month)
 {
 	if (month == 1)
-		return (ft_strdup("Jan"));
+		return ("Jan");
 	if (month == 2)
-		return (ft_strdup("Feb"));
+		return ("Feb");
 	if (month == 3)
-		return (ft_strdup("Mar"));
+		return ("Mar");
 	if (month == 4)
-		return (ft_strdup("Apr"));
+		return ("Apr");
 	if (month == 5)
-		return (ft_strdup("May"));
+		return ("May");
 	if (month == 6)
-		return (ft_strdup("Jun"));
+		return ("Jun");
 	if (month == 7)
-		return (ft_strdup("Jul"));
+		return ("Jul");
 	if (month == 8)
-		return (ft_strdup("Aug"));
+		return ("Aug");
 	if (month == 9)
-		return (ft_strdup("Sep"));
+		return ("Sep");
 	if (month == 10)
-		return (ft_strdup("Oct"));
+		return ("Oct");
 	if (month == 11)
-		return (ft_strdup("Nov"));
+		return ("Nov");
 	if (month == 12)
-		return (ft_strdup("Dec"));
+		return ("Dec");
 	return (NULL);
 }
 
-static char			*whatsday(int weekday)
+static const char	*whatsday(int weekday)
 {
 	if (weekday == 1)
-		return (ft_strdup("Mon"));
+		return ("Mon");
 	if (weekday == 2)
-		return (ft_strdup("Tue"));
+		return ("Tue");
 	if (weekday == 3)
-		return (ft_strdup("Wed"));
+		return ("Wed");
 	if (weekday == 4)
-		return (ft_strdup("Thu"));
+		return ("Thu");
 	if (weekday == 5)
-		return (ft_strdup("Fri"));
+		return ("Fri");
 	if (weekday == 6)
-		return (ft_strdup("Sat"));
+		return ("Sat");
 	if (weekday == 7)
-		return (ft_strdup("Sun"));
+		return ("Sun");
 	return (NULL);
-
 }
 
 t_cdate				*struct_to_str(t_cdate *date)
 {
-	date->weekday = whatsday(date->weekday_n);	
-	date->month = whatsmonth(date->month_n);
+	date->weekday = ft_strdup(whatsday(date->weekday_n));
+	date->month = ft_strdup(whatsmonth(date->month_n));
 	date->day = ft_itoa(date->day_n);
 	date->hour = digit_to_str(date->hour_n);
 	date->min = digit_to_str(date->min_n);

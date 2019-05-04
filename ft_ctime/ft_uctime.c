@@ -1,24 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_uctime.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/05/04 19:06:13 by yquaro            #+#    #+#             */
+/*   Updated: 2019/05/04 19:33:24 by yquaro           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_ctime.h"
 
-static void			print_struct(t_cdate *date)
-{
-	printf("---------------------------------------------\n");
-	printf("print struct:\n\n");
-	printf("weekday = %s\nweekday_n = %d\n\n", date->weekday, date->weekday_n);
-	printf("month = %s\nmonth_n = %d\n\n", date->month, date->month_n);
-	printf("day = %s\nday_n = %d\n\n", date->day, date->day_n);
-	printf("hour = %s\nhour_n = %d\n\n", date->hour, date->hour_n);
-	printf("min = %s\nmin = %d\n\n", date->min, date->min_n);
-	printf("sec = %s\nsec_n = %d\n\n", date->sec, date->sec_n);
-	printf("year = %s\nyear_n = %d\n\n", date->year, date->year_n);
-	printf("---------------------------------------------\n\n");
-}
-
-static t_cdate		*nullifydate()
+static t_cdate		*nullifydate(void)
 {
 	t_cdate *date;
 
-	date = (t_cdate *)ft_memalloc(1);
+	date = (t_cdate *)ft_memalloc(sizeof(t_cdate));
 	date->weekday = NULL;
 	date->weekday_n = 0;
 	date->month = NULL;
@@ -62,16 +60,19 @@ t_cdate				*ft_uctime(const time_t *ttime)
 	t_cdate		*date;
 	time_t		res;
 
-	tsec = (time_t)*ttime + DEL_CTIME_UNIX_SYS;
+	if (*ttime < 0)
+	{
+		ft_puterror("ERROR: ft_uctime does not work with negative numbers\n");
+		exit(-1);
+	}
 	res = 0;
+	tsec = (time_t)*ttime + DEL_CTIME_UNIX_SYS;
 	date = nullifydate();
-	date = getday_since1970(date, tsec, &res); /* date->day_n since 1970 year */
-	date = getweekday(date, (const time_t *)&res);
+	date = getday_since1970(date, tsec, &res);
+	date = getweekday(date);
 	date = gettime(date, (const time_t *)&res);
 	date = getyear(date, tsec);
 	date = getmonth(date);
 	date = struct_to_str(date);
-	print_struct(date);
-	// printf("res = %ld\n", res);
 	return (date);
 }

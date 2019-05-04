@@ -6,7 +6,7 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/03 21:55:40 by yquaro            #+#    #+#             */
-/*   Updated: 2019/05/03 21:59:29 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/05/04 19:11:15 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,8 @@ t_cdate		*getday_since1970(t_cdate *date, time_t ttime, time_t *res)
 		else
 		{
 			if (ttime - (tmp * coefficient[i + 1]) != 0)
-				*res += multiply_coeff(coefficient, i) * (ttime - (tmp * coefficient[i + 1]));
+				*res += multiply_coeff(coefficient, i) * \
+					(ttime - (tmp * coefficient[i + 1]));
 		}
 		ttime = tmp;
 		i++;

@@ -6,7 +6,7 @@
 #    By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/20 19:26:56 by yquaro            #+#    #+#              #
-#    Updated: 2019/05/03 18:55:27 by yquaro           ###   ########.fr        #
+#    Updated: 2019/05/04 19:34:43 by yquaro           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ NAME = libft.a
 
 all: $(NAME)
 $(NAME):
-	gcc -g -c $(FLAGS) $(SOURCE)
+	gcc -c $(FLAGS) $(SOURCE)
 	mkdir $(OBJDIR)
 	mv $(OBJS) $(OBJDIR)
 	make -C ft_ctime/ all
