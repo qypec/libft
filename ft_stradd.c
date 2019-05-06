@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_stradd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/22 12:29:42 by yquaro            #+#    #+#             */
-/*   Updated: 2019/05/05 18:35:54 by yquaro           ###   ########.fr       */
+/*   Created: 2019/05/04 21:17:17 by yquaro            #+#    #+#             */
+/*   Updated: 2019/05/04 21:20:02 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+char	*ft_stradd(char *str, char c)
 {
-	unsigned char	*str_dst;
-	unsigned char	*str_src;
-	size_t			i;
+	int i;
 
+	if (str == NULL)
+		return (NULL);
 	i = 0;
-	str_dst = (unsigned char *)dst;
-	str_src = (unsigned char *)src;
-	if (str_dst == str_src)
-		return (str_dst);
-	while (i < n)
-	{
-		if (str_src[i] == '\0')
-			str_dst[i] = '\0';
-		str_dst[i] = str_src[i];
+	while (str[i] != '\0')
 		i++;
-	}
-	return (str_dst);
+	str[i] = c;
+	return (str);
 }
