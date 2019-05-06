@@ -6,7 +6,7 @@
 #    By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/20 19:26:56 by yquaro            #+#    #+#              #
-#    Updated: 2019/05/06 18:48:08 by yquaro           ###   ########.fr        #
+#    Updated: 2019/05/06 20:45:11 by yquaro           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ $(NAME):
 	mkdir $(OBJDIR)
 	mv $(OBJS) $(OBJDIR)
 	make -C ft_ctime/ all
+	make -C ft_hashtab/ all
 	ar rc $(NAME) $(OBJDIR)/$(OBJS)
 	ranlib $(NAME)
 

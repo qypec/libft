@@ -5,16 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/05/01 17:26:14 by yquaro            #+#    #+#              #
-#    Updated: 2019/05/06 20:44:09 by yquaro           ###   ########.fr        #
+#    Created: 2019/05/06 20:42:49 by yquaro            #+#    #+#              #
+#    Updated: 2019/05/06 21:02:35 by yquaro           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-FLAGS = -Wall -Wextra -Werror
-SOURCE = ft_uctime.c ft_ctime.c getdata.c getmonth.c get_temporarydata.c struct_to_str.c
-OBJS = ft_uctime.o ft_ctime.o getdata.o getmonth.o get_temporarydata.o struct_to_str.o
+# FLAGS = -Wall -Wextra -Werror
+SOURCE = 
+OBJS = 
 OBJDIR = ../.obj
 
 all: 
-	gcc -c $(FLAGS) $(SOURCE)
+	gcc -c $(SOURCE) # не забыть флаги!!!!!!
 	mv $(OBJS) $(OBJDIR)
