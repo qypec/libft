@@ -6,7 +6,7 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/04 18:59:43 by yquaro            #+#    #+#             */
-/*   Updated: 2019/05/04 19:32:48 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/06/10 21:39:25 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,16 +48,16 @@ static char			*like_original_ctime(t_cdate *date)
 
 char				*ft_ctime(const time_t *ttime)
 {
-	t_cdate		*date;
-	char		*str;
+	// t_cdate		*date;
+	// char		*str;
 
-	if (*ttime < 0)
-	{
-		ft_puterror("ERROR: ft_ctime does not work with negative numbers\n");
-		exit(-1);
-	}
-	date = ft_uctime(ttime);
-	str = like_original_ctime(date);
-	free_uctime(date);
-	return (str);
+	// if (*ttime < 0)
+	// {
+	// 	ft_puterror("ERROR: ft_ctime does not work with negative numbers\n");
+	// 	exit(-1);
+	// }
+	// date = ft_uctime(ttime);
+	// str = like_original_ctime(date);
+	// free_uctime(date);
+	return ("idi nazyi");
 }

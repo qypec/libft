@@ -6,7 +6,7 @@
 #    By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/20 19:26:56 by yquaro            #+#    #+#              #
-#    Updated: 2019/05/06 20:45:11 by yquaro           ###   ########.fr        #
+#    Updated: 2019/06/10 23:10:12 by yquaro           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,26 +17,60 @@
 # (ranlib)
 # Adds a character index to the archive
 
-FLAGS = -Wall -Wextra -Werror
-SOURCE = ft_*.c
-OBJS = *.o
-OBJDIR = .obj
-NAME = libft.a
+CC = gcc
+CFLAGS = -g -c -Wall -Wextra -Werror
+SOURCES = ft_putstr.c ft_putendl.c ft_putchar.c ft_strlen.c ft_itoa.c \
+			ft_memalloc.c ft_numblen.c ft_puterror.c ft_strdel.c ft_strdup.c \
+			ft_strglue.c ft_memset.c
+OBJECTS = ft_putstr.o ft_putendl.o ft_putchar.o ft_strlen.o ft_itoa.o \
+			ft_memalloc.o ft_numblen.o ft_puterror.o ft_strdel.o ft_strdup.o \
+			ft_strglue.o ft_memset.o
 
-all: $(NAME)
-$(NAME):
-	gcc -c $(FLAGS) $(SOURCE)
-	mkdir $(OBJDIR)
-	mv $(OBJS) $(OBJDIR)
+NAME = libft.a
+LIBNAMES = libctime.a
+
+all: $(SOURCES) print_echo $(NAME)
+
+print_echo:
+	@echo \*\*\* Compiling libft
+
+.c.o:
+	$(CC) $(CFLAGS) $< -o $@
+
+$(NAME): $(OBJECTS)
 	make -C ft_ctime/ all
-	make -C ft_hashtab/ all
-	ar rc $(NAME) $(OBJDIR)/$(OBJS)
-	ranlib $(NAME)
+	ar rc $(NAME) $(OBJECTS) $(LIBNAMES)
+	@ranlib $(NAME)
+
 
 clean:
-	rm -rf $(OBJDIR)
+	make -C ft_ctime/ fclean
+	@rm $(OBJECTS)
 
 fclean: clean
-	rm -f $(NAME)
+	@rm $(NAME)
+	@rm $(LIBNAMES)
 
-re: fclean all
+
+# FLAGS = -Wall -Wextra -Werror
+# SOURCE = ft_*.c
+# OBJS = *.o
+# OBJDIR = .obj
+# NAME = libft.a
+
+# all: $(NAME)
+# $(NAME):
+# 	gcc -g -c $(FLAGS) $(SOURCE)
+# 	mkdir $(OBJDIR)
+# 	mv $(OBJS) $(OBJDIR)
+# 	make -C ft_ctime/ all
+# 	ar rc $(NAME) $(OBJDIR)/$(OBJS)
+# 	ranlib $(NAME)
+
+# clean:
+# 	rm -rf $(OBJDIR)
+
+# fclean: clean
+# 	rm -f $(NAME)
+
+# re: fclean all
