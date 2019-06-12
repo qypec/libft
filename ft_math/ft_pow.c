@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdel.c                                        :+:      :+:    :+:   */
+/*   ft_pow.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
+/*   By: qypec <qypec@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/02 11:44:34 by yquaro            #+#    #+#             */
-/*   Updated: 2019/05/01 19:04:33 by yquaro           ###   ########.fr       */
+/*   Created: 2018/12/08 13:55:46 by yquaro            #+#    #+#             */
+/*   Updated: 2019/06/12 10:58:47 by qypec            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "ft_math.h"
 
-void	ft_strdel(char **as)
+int		ft_pow(int num, int power)
 {
-	if (!as)
-		return ;
-	free(*as);
-	*as = NULL;
+	int tot;
+
+	tot = num;
+	if (power < 0)
+		return (-1);
+	if (power == 0)
+		return (1);
+	if (power == 1)
+		return (num);
+	while (power-- != 1)
+		tot *= num;
+	return (tot);
 }

@@ -6,7 +6,7 @@
 /*   By: qypec <qypec@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/12 09:44:01 by qypec             #+#    #+#             */
-/*   Updated: 2019/06/12 10:37:08 by qypec            ###   ########.fr       */
+/*   Updated: 2019/06/12 10:56:16 by qypec            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,6 @@
 # include "../includes/libft.h"
 
 int								ft_abs(int num);
+int								ft_pow(int num, int power);
 
 #endif

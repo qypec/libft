@@ -1,4 +1,4 @@
-# include "../includes/libft.h"
+# include "ft_alloc.h"
 
 void				*ft_realloc(void *ptr, size_t newsize)
 {

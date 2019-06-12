@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
+/*   By: qypec <qypec@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 19:18:31 by yquaro            #+#    #+#             */
-/*   Updated: 2019/05/01 19:04:24 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/06/12 10:58:08 by qypec            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "ft_alloc.h"
 
 void	*ft_memalloc(size_t size)
 {
