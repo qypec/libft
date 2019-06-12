@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
+/*   By: qypec <qypec@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 13:38:22 by yquaro            #+#    #+#             */
-/*   Updated: 2019/05/01 19:04:15 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/06/12 10:36:30 by qypec            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "ft_math.h"
 
 int		ft_abs(int num)
 {
