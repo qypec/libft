@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+         #
+#    By: qypec <qypec@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/20 19:26:56 by yquaro            #+#    #+#              #
-#    Updated: 2019/06/10 23:10:12 by yquaro           ###   ########.fr        #
+#    Updated: 2019/06/12 09:27:42 by qypec            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,6 @@ OBJECTS = ft_putstr.o ft_putendl.o ft_putchar.o ft_strlen.o ft_itoa.o \
 			ft_strglue.o ft_memset.o
 
 NAME = libft.a
-LIBNAMES = libctime.a
 
 all: $(SOURCES) print_echo $(NAME)
 
@@ -38,18 +37,18 @@ print_echo:
 	$(CC) $(CFLAGS) $< -o $@
 
 $(NAME): $(OBJECTS)
-	make -C ft_ctime/ all
-	ar rc $(NAME) $(OBJECTS) $(LIBNAMES)
+	@make -C ft_ctime/ all
+	@ar rc $(NAME) $(OBJECTS)
 	@ranlib $(NAME)
+	@mv $(NAME) lib/$(NAME)
 
 
 clean:
-	make -C ft_ctime/ fclean
+	@make -C ft_ctime/ fclean
 	@rm $(OBJECTS)
 
 fclean: clean
-	@rm $(NAME)
-	@rm $(LIBNAMES)
+	@rm lib/*.a
 
 
 # FLAGS = -Wall -Wextra -Werror

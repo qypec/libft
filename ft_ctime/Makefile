@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+         #
+#    By: qypec <qypec@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/01 17:26:14 by yquaro            #+#    #+#              #
-#    Updated: 2019/06/10 21:40:35 by yquaro           ###   ########.fr        #
+#    Updated: 2019/06/12 09:31:26 by qypec            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,12 +32,12 @@ print_echo:
 	@echo \*\*\* Compiling ft_ctime
 
 .c.o:
-	@$(CC) -c $< -o $@
+	$(CC) $(CFLAGS) $< -o $@
 
 $(NAME): $(OBJECTS)
 	@ar rc $(NAME) $(OBJECTS)
 	@ranlib $(NAME)
-	mv $(NAME) ../$(NAME)
+	@mv $(NAME) ../lib/$(NAME)
 
 clean:
 	@rm $(OBJECTS)
