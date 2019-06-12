@@ -6,7 +6,7 @@
 #    By: qypec <qypec@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/20 19:26:56 by yquaro            #+#    #+#              #
-#    Updated: 2019/06/12 09:27:42 by qypec            ###   ########.fr        #
+#    Updated: 2019/06/12 09:38:24 by qypec            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,6 +38,7 @@ print_echo:
 
 $(NAME): $(OBJECTS)
 	@make -C ft_ctime/ all
+	@make -C ft_alloc/ all
 	@ar rc $(NAME) $(OBJECTS)
 	@ranlib $(NAME)
 	@mv $(NAME) lib/$(NAME)
@@ -45,10 +46,11 @@ $(NAME): $(OBJECTS)
 
 clean:
 	@make -C ft_ctime/ fclean
+	@make -C ft_alloc/ fclean
 	@rm $(OBJECTS)
 
 fclean: clean
-	@rm lib/*.a
+	@rm lib/$(NAME)
 
 
 # FLAGS = -Wall -Wextra -Werror

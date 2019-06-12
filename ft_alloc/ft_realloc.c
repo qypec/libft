@@ -1,4 +1,3 @@
-// # include "ft_alloc.h"
 # include "../includes/libft.h"
 
 void				*ft_realloc(void *ptr, size_t newsize)
