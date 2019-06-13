@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isspace.c                                       :+:      :+:    :+:   */
+/*   ft_lnum.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/08 14:33:56 by yquaro            #+#    #+#             */
-/*   Updated: 2019/06/12 17:58:27 by yquaro           ###   ########.fr       */
+/*   Created: 2019/06/12 16:32:08 by yquaro            #+#    #+#             */
+/*   Updated: 2019/06/13 15:57:15 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#ifndef FT_CTIME_H
+# define FT_CTIME_H
 
-int		ft_isspace(int c)
+# include "../includes/libft.h"
+
+# define	DOUBLE_POW_CONST	52
+
+typedef struct					s_lnum
 {
-	if ((c >= 9 && c <= 13) || c == 32)
-		return (1);
-	return (0);
-}
+	short						sign;
+	long long					mantissa;
+	short						expon;
+}								t_lnum;
+
+#endif
