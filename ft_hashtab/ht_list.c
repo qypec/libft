@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ht_list.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/14 15:48:08 by yquaro            #+#    #+#             */
-/*   Updated: 2019/06/14 15:48:44 by yquaro           ###   ########.fr       */
+/*   Created: 2019/06/14 16:30:10 by yquaro            #+#    #+#             */
+/*   Updated: 2019/06/14 18:07:50 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "includes/libft.h"
+# include "ft_hashtab.h"
 
-t_list						*ft_lstnew(const void *content, size_t content_size)
+ht_list					*ht_listnew(const void *key, const void *value)
 {
-	t_list				*list;
+	ht_list				*list;
 
-	if ((list = (t_list *)malloc(sizeof(t_list))) == NULL)
+	if ((list = (ht_list *)malloc(sizeof(ht_list))) == NULL)
 		return (NULL);
-	list->content = content;
-	list->content_size = content_size;
+	list->key = (void *)key;
+	list->value = (void *)value;
 	list->next = NULL;
 	return (list);
 }

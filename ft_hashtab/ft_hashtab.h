@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_hashtab.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/14 15:48:08 by yquaro            #+#    #+#             */
-/*   Updated: 2019/06/14 15:48:44 by yquaro           ###   ########.fr       */
+/*   Created: 2019/06/14 13:54:23 by yquaro            #+#    #+#             */
+/*   Updated: 2019/06/14 18:09:07 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "includes/libft.h"
+#ifndef FT_HASHTAB
+# define FT_HASHTAB
 
-t_list						*ft_lstnew(const void *content, size_t content_size)
+# include							"../includes/libft.h"
+
+# define HT_INIT_SIZE				5
+# define DEFAULT_HASHTABLE_SIZE		100
+
+typedef struct						s_htablist
 {
-	t_list				*list;
+	void							*key;
+	void							*value;
+	size_t							content_size;
+	struct s_htablist				*next;
+}									ht_list;
 
-	if ((list = (t_list *)malloc(sizeof(t_list))) == NULL)
-		return (NULL);
-	list->content = content;
-	list->content_size = content_size;
-	list->next = NULL;
-	return (list);
-}
+int									g_htabsize;
+
+ht_list								*ht_listnew(const void *key, const void *value);
+
+#endif
