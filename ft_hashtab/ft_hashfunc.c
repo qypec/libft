@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_hashfunc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/27 20:58:08 by yquaro            #+#    #+#             */
-/*   Updated: 2019/06/15 21:39:03 by yquaro           ###   ########.fr       */
+/*   Created: 2019/06/15 18:11:40 by yquaro            #+#    #+#             */
+/*   Updated: 2019/06/15 22:12:47 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "includes/libft.h"
+# include "ft_hashtab.h"
 
-int		ft_strcmp(const char *s1, const char *s2)
+int        ft_hashfunc(const char *str)
 {
-	int i;
+	int			i;
+	long long	hash;
+	int			p;
+	long long	p_pow;
 
+	p_pow = 1;
 	i = 0;
-	while (s1[i] != '\0' || s2[i] != '\0')
+	hash = 0;
+	p = 16;
+	while (str[i] != '\0')
 	{
-		if (s1[i] != s2[i])
-			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		hash += (str[i] - 'a' + 1) * p_pow;
+		p_pow *= p;
 		i++;
 	}
-	return (0);
+	hash = ft_abs(hash) % g_htabsize;
+	return (hash);
 }
