@@ -6,7 +6,7 @@
 /*   By: qypec <qypec@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/14 16:30:10 by yquaro            #+#    #+#             */
-/*   Updated: 2019/06/16 00:54:35 by qypec            ###   ########.fr       */
+/*   Updated: 2019/06/16 01:42:39 by qypec            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,16 @@ void					ht_listdelone(ht_list **list)
 	tmp->next = NULL;
 	free(tmp);
 	tmp = NULL;
+}
+
+void					ht_listdel(ht_list **list)
+{
+	ht_list				*tmp;
+
+	tmp = *list;
+	while (tmp != NULL)
+		ht_listdelone(&tmp);
+	*list = NULL;
 }
 
 ht_list					*ht_listnew(const char *key, const void *value)

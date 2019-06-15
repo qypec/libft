@@ -33,7 +33,7 @@ ht_list					**ft_htabnew(void *format, ...)
 		g_hashfunc = DEFAULT_HASHFUNC;
 	}
 	va_end(factor);
-	if ((h_tab = (ht_list **)malloc(sizeof(ht_list *) * (g_htabsize + 1))) == NULL)
+	if ((h_tab = (ht_list **)malloc(sizeof(ht_list *) * g_htabsize)) == NULL)
 		return (NULL);
 	while (i < g_htabsize)
 		h_tab[i++] = ht_listnew(NULL, NULL);

@@ -6,7 +6,7 @@
 /*   By: qypec <qypec@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/14 13:54:23 by yquaro            #+#    #+#             */
-/*   Updated: 2019/06/16 00:49:45 by qypec            ###   ########.fr       */
+/*   Updated: 2019/06/16 01:30:19 by qypec            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,14 @@ void								*g_hashfunc;
 
 ht_list								*ht_listnew(const char *key, const void *value);
 void								ht_listdelone(ht_list **list);
+void								ht_listdel(ht_list **list);
 
 int									ft_hashfunc(const char *str);
 
 ht_list								**ft_htabnew(void *format, ...);
 void								ft_htabadd(ht_list **htab, const char *key, const void *value);
 void								ft_htabdelone(ht_list **htab, const char *key);
+void								ft_htabfree(ht_list ***htab);
 void								ft_puthtab(ht_list **htab);
 
 #endif
