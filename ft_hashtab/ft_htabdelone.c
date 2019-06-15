@@ -1,39 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ht_list.c                                          :+:      :+:    :+:   */
+/*   ft_htabdelone.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: qypec <qypec@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/14 16:30:10 by yquaro            #+#    #+#             */
-/*   Updated: 2019/06/16 00:54:35 by qypec            ###   ########.fr       */
+/*   Created: 2019/06/16 00:19:28 by qypec             #+#    #+#             */
+/*   Updated: 2019/06/16 01:07:02 by qypec            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "ft_hashtab.h"
+# include <unistd.h>
 
-void					ht_listdelone(ht_list **list)
+void					ft_htabdelone(ht_list **htab, const char *key)
 {
+	int					hash;
+	int					(*hash_func)(const char *);
 	ht_list				*tmp;
+	ht_list				*prev;
 
-	if (list == NULL)
+	hash_func = g_hashfunc;
+	hash = hash_func(key);
+	tmp = htab[hash];
+	if (tmp->next == NULL)
+	{
+		tmp->key = NULL;
+		tmp->value = NULL;
 		return ;
-	tmp = *list;
-	tmp = tmp->next;
-	(*list)->next = tmp->next;
-	tmp->next = NULL;
-	free(tmp);
-	tmp = NULL;
-}
-
-ht_list					*ht_listnew(const char *key, const void *value)
-{
-	ht_list				*list;
-
-	if ((list = (ht_list *)malloc(sizeof(ht_list))) == NULL)
-		return (NULL);
-	list->key = (char *)key;
-	list->value = (void *)value;
-	list->next = NULL;
-	return (list);
+	}
+	while (tmp != NULL)
+	{
+		if (ft_strcmp((const char *)tmp->key, key) == 0)
+			ht_listdelone(&prev);
+		prev = tmp;
+		if (tmp->next == NULL)
+			return ;
+		tmp = tmp->next;
+	}
 }

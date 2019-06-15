@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_hashtab.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
+/*   By: qypec <qypec@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/14 13:54:23 by yquaro            #+#    #+#             */
-/*   Updated: 2019/06/15 21:04:03 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/06/16 00:49:45 by qypec            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,13 @@ int									g_htabsize;
 void								*g_hashfunc;
 
 ht_list								*ht_listnew(const char *key, const void *value);
+void								ht_listdelone(ht_list **list);
+
 int									ft_hashfunc(const char *str);
+
 ht_list								**ft_htabnew(void *format, ...);
-ht_list								**ft_htabadd(ht_list **htab, const char *key, const void *value);
+void								ft_htabadd(ht_list **htab, const char *key, const void *value);
+void								ft_htabdelone(ht_list **htab, const char *key);
 void								ft_puthtab(ht_list **htab);
 
 #endif

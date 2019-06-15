@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+         #
+#    By: qypec <qypec@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/14 13:54:33 by yquaro            #+#    #+#              #
-#    Updated: 2019/06/14 13:59:02 by yquaro           ###   ########.fr        #
+#    Updated: 2019/06/16 00:48:32 by qypec            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
 CFLAGS = -g -c -Wall -Wextra -Werror
-SOURCES =
-OBJECTS =
+SOURCES = ft_hashfunc.c ft_htabadd.c ft_htabnew.c ft_puthtab.c ht_list.c ft_htabdelone.c
+OBJECTS = ft_hashfunc.o ft_htabadd.o ft_htabnew.o ft_puthtab.o ht_list.o ft_htabdelone.o
 
 NAME = libhashtab.a
 
@@ -28,7 +28,7 @@ print_echo:
 $(NAME): $(OBJECTS)
 	@ar rc $(NAME) $(OBJECTS)
 	@ranlib $(NAME)
-	@mv $(NAME) ../lib/$(NAME)
+# 	@mv $(NAME) ../lib/$(NAME)
 
 clean:
 	@rm $(OBJECTS)
