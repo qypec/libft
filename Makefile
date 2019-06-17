@@ -6,7 +6,7 @@
 #    By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/20 19:26:56 by yquaro            #+#    #+#              #
-#    Updated: 2019/06/18 00:36:55 by yquaro           ###   ########.fr        #
+#    Updated: 2019/06/18 00:44:35 by yquaro           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@
 
 CC = gcc
 CFLAGS = -g -c -Wall -Wextra -Werror
-SOURCES = ft_addsymb.c ft_addsymbend.c ft_atoi.c ft_bzero.c ft_height.c \
+SOURCES = ft_addsymb.c ft_addsymbend.c ft_atoi.c ft_bzero.c ft_matrdup.c \
 			ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c \
 			ft_isspace.c ft_itoa.c ft_lstadd.c ft_lstdel.c ft_lstdelone.c \
 			ft_lstiter.c ft_lstmap.c ft_lstnew.c ft_matrixfree.c ft_memccpy.c \
@@ -32,8 +32,9 @@ SOURCES = ft_addsymb.c ft_addsymbend.c ft_atoi.c ft_bzero.c ft_height.c \
 			ft_strlen.c ft_strmap.c ft_strmapi.c ft_strnadd.c ft_strncat.c \
 			ft_strncmp.c ft_strncpy.c ft_strncut.c ft_strnequ.c ft_strnew.c \
 			ft_strnglue.c ft_strnstr.c ft_strrchr.c ft_strsplit.c ft_strstr.c \
-			ft_strsub.c ft_strswap.c ft_strtrim.c ft_tolower.c ft_toupper.c
-OBJECTS = ft_addsymb.o ft_addsymbend.o ft_atoi.o ft_bzero.o ft_height.o \
+			ft_strsub.c ft_strswap.c ft_strtrim.c ft_tolower.c ft_toupper.c \
+			ft_matrlen.c
+OBJECTS = ft_addsymb.o ft_addsymbend.o ft_atoi.o ft_bzero.o ft_matrdup.o \
 			ft_isalnum.o ft_isalpha.o ft_isascii.o ft_isdigit.o ft_isprint.o \
 			ft_isspace.o ft_itoa.o ft_lstadd.o ft_lstdel.o ft_lstdelone.o \
 			ft_lstiter.o ft_lstmap.o ft_lstnew.o ft_matrixfree.o ft_memccpy.o \
@@ -46,7 +47,8 @@ OBJECTS = ft_addsymb.o ft_addsymbend.o ft_atoi.o ft_bzero.o ft_height.o \
 			ft_strlen.o ft_strmap.o ft_strmapi.o ft_strnadd.o ft_strncat.o \
 			ft_strncmp.o ft_strncpy.o ft_strncut.o ft_strnequ.o ft_strnew.o \
 			ft_strnglue.o ft_strnstr.o ft_strrchr.o ft_strsplit.o ft_strstr.o \
-			ft_strsub.o ft_strswap.o ft_strtrim.o ft_tolower.o ft_toupper.o
+			ft_strsub.o ft_strswap.o ft_strtrim.o ft_tolower.o ft_toupper.o \
+			ft_matrlen.o
 
 NAME = libft.a
 

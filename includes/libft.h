@@ -6,7 +6,7 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 12:05:21 by yquaro            #+#    #+#             */
-/*   Updated: 2019/06/14 15:49:17 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/06/18 00:47:24 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 # include <stddef.h>
 # include <stdlib.h>
 # include "../ft_ctime/ft_ctime.h"
+# include "../ft_math/ft_math.h"
+# include "../ft_alloc/ft_alloc.h"
+# include "../ft_hashtab/ft_hashtab.h"
 
 typedef struct		s_list
 {
@@ -83,9 +86,6 @@ void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
-int					ft_height(char *s, char c);
-int					ft_abs(int num);
-int					ft_pow(int num, int power);
 int					ft_isspace(int c);
 int					ft_numblen(long long n);
 char				**ft_matrixfree(char ***ret);
@@ -99,5 +99,7 @@ char				*ft_strglue(char *str, const char *left, const char *right);
 char				*ft_strnglue(char *str, const char *left, const char *right, size_t n);
 char				*ft_stradd(char *str, char c);
 char				*ft_strnadd(char *str, char c, size_t n);
+char				**ft_matrdup(const char **matr);
+size_t				ft_matrlen(const char **matr);
 
 #endif

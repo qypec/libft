@@ -6,48 +6,51 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/02 14:13:16 by yquaro            #+#    #+#             */
-/*   Updated: 2019/05/01 19:04:42 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/06/13 22:48:41 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/libft.h"
 
-static const char	*ft_str_find_next(const char *str, char c, int skip)
+static size_t			ft_height(const char *str, char c)
 {
-	if (skip)
-		while (*str != '\0' && *str == c)
-			str++;
-	else
-		while (*str != '\0' && *str != c)
-			str++;
-	return (str);
+	size_t				height;
+
+	height = 0;
+	while (*str != '\0')
+	{
+		if (*str == c)
+			height++;
+		str++;
+	}
+	return (height + 1);
 }
 
 char				**ft_strsplit(char const *str, char c)
 {
-	char		**ret;
-	int			i;
-	const char	*next;
+	char			**matr;
+	int				len;
+	int				i;
 
 	if (str == NULL)
 		return (NULL);
-	ret = (char**)malloc(sizeof(char*) * (ft_height((char *)str, c) + 1));
-	if (ret == NULL)
-		return (NULL);
+	len = 0;
 	i = 0;
-	while (*str != '\0')
+	matr = (char **)malloc(sizeof(char *) * (ft_height(str, c) + 1));
+	while (str[len] != '\0')
 	{
-		str = ft_str_find_next(str, c, 1);
-		if (*str != '\0')
+		while (str[len] != c)
+			if (str[len++] == '\0')
+				break ;
+		if ((matr[i] = (char *)malloc(sizeof(char) * len)) == NULL)
 		{
-			next = ft_str_find_next(str, c, 0);
-			ret[i] = ft_strsub(str, 0, next - str);
-			if (ret[i] == NULL)
-				return (ft_matrixfree(&ret));
-			i++;
-			str = next;
+			ft_matrixfree(&matr);
+			return (NULL);
 		}
+		ft_strncpy(matr[i++], str, len);
+		str = str + len + 1;
+		len = 0;
 	}
-	ret[i] = 0;
-	return (ret);
+	matr[i] = NULL;
+	return (matr);
 }

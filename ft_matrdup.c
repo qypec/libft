@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_height.c                                        :+:      :+:    :+:   */
+/*   ft_matrdup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/05 19:57:17 by yquaro            #+#    #+#             */
-/*   Updated: 2019/05/01 19:04:17 by yquaro           ###   ########.fr       */
+/*   Created: 2019/06/13 20:30:01 by yquaro            #+#    #+#             */
+/*   Updated: 2019/06/18 00:45:22 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+# include "includes/libft.h"
 
-int		ft_height(char *s, char c)
+char					**ft_matrdup(const char **matr)
 {
-	int i;
-	int y;
+	char				**new;
+	int					i;
 
 	i = 0;
-	y = 0;
-	while (s[i] == c)
-		i++;
-	while (s[i++] != '\0')
+	new = (char **)ft_memalloc(sizeof(char *) * (ft_matrlen(matr) + 1));
+	while (matr[i] != NULL)
 	{
-		if (s[i] == c)
-		{
-			y++;
-			while (s[i] == c)
-				i++;
-		}
+		new[i] = ft_strdup(matr[i]);
+		i++;
 	}
-	i--;
-	if (s[i - 1] != c)
-		y++;
-	return (y);
+	new[i] = NULL;
+	return (new);
 }
