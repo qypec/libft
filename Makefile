@@ -6,7 +6,7 @@
 #    By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/20 19:26:56 by yquaro            #+#    #+#              #
-#    Updated: 2019/06/18 00:44:35 by yquaro           ###   ########.fr        #
+#    Updated: 2019/06/18 02:26:52 by yquaro           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,38 +68,14 @@ $(NAME): $(OBJECTS)
 	@ar rc $(NAME) $(OBJECTS)
 	@ranlib $(NAME)
 	@mv $(NAME) lib/$(NAME)
+	@make -C lib/ all
 
-
-clean:
+fclean:
 	@make -C ft_ctime/ fclean
 	@make -C ft_alloc/ fclean
 	@make -C ft_math/ fclean
 	@make -C ft_hashtab/ fclean
-	@rm $(OBJECTS)
+	@make -C lib/ fclean
+	@rm *.o
 
-fclean: clean
-	@rm lib/$(NAME)
-
-
-# FLAGS = -Wall -Wextra -Werror
-# SOURCE = ft_*.c
-# OBJS = *.o
-# OBJDIR = .obj
-# NAME = libft.a
-
-# all: $(NAME)
-# $(NAME):
-# 	gcc -g -c $(FLAGS) $(SOURCE)
-# 	mkdir $(OBJDIR)
-# 	mv $(OBJS) $(OBJDIR)
-# 	make -C ft_ctime/ all
-# 	ar rc $(NAME) $(OBJDIR)/$(OBJS)
-# 	ranlib $(NAME)
-
-# clean:
-# 	rm -rf $(OBJDIR)
-
-# fclean: clean
-# 	rm -f $(NAME)
-
-# re: fclean all
+re: fclean all

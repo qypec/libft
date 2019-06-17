@@ -5,31 +5,25 @@
 #                                                     +:+ +:+         +:+      #
 #    By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/06/12 16:32:24 by yquaro            #+#    #+#              #
-#    Updated: 2019/06/18 02:27:44 by yquaro           ###   ########.fr        #
+#    Created: 2019/06/18 01:54:46 by yquaro            #+#    #+#              #
+#    Updated: 2019/06/18 02:18:00 by yquaro           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = gcc
-CFLAGS = -g -c -Wall -Wextra -Werror
-SOURCES = 
-OBJECTS = 
+NAME = libft.a
 
-NAME = liblnum.a
-
-all: $(SOURCES) print_echo $(NAME)
-	
-print_echo:
-	@echo \*\*\* Compiling ft_lnum
-
-.c.o:
-	$(CC) $(CFLAGS) $< -o $@
-
-$(NAME): $(OBJECTS)
-	@ar rc $(NAME) $(OBJECTS)
+all:
+	@echo \*\*\* Reassemblage 
+	@ar -x libft.a
+	@ar -x liballoc.a
+	@ar -x libctime.a
+	@ar -x libhashtab.a
+	@ar -x libmath.a
+	@ar rc $(NAME) *.o
 	@ranlib $(NAME)
-	@mv $(NAME) ../lib/$(NAME)
+	@rm __.SYMDEF\ SORTED
+	@mv $(NAME) ../../$(NAME)
+	@echo \*\*\* COMPLETE!
 
-fclean: 
-	@rm ../lib/$(NAME)
+fclean:
 	@rm *.o
