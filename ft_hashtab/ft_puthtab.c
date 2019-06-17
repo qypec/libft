@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_puthtab.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qypec <qypec@student.42.fr>                +#+  +:+       +#+        */
+/*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/15 19:40:07 by yquaro            #+#    #+#             */
-/*   Updated: 2019/06/16 00:12:53 by qypec            ###   ########.fr       */
+/*   Updated: 2019/06/18 00:13:43 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void					ft_puthtab(ht_list **htab)
 	i = 0;
 	while (i < g_htabsize)
 	{
-		if (htab[i]->key == NULL && htab[i]->value == NULL)
+		if (htab[i] == NULL)
 		{
 			i++;
 			continue ;

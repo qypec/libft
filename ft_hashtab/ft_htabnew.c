@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_htabnew.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qypec <qypec@student.42.fr>                +#+  +:+       +#+        */
+/*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/15 16:19:38 by yquaro            #+#    #+#             */
-/*   Updated: 2019/06/16 00:12:15 by qypec            ###   ########.fr       */
+/*   Updated: 2019/06/17 22:44:00 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,6 @@ ht_list					**ft_htabnew(void *format, ...)
 	if ((h_tab = (ht_list **)malloc(sizeof(ht_list *) * g_htabsize)) == NULL)
 		return (NULL);
 	while (i < g_htabsize)
-		h_tab[i++] = ht_listnew(NULL, NULL);
+		h_tab[i++] = NULL;
 	return (h_tab);
 }
