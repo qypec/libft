@@ -5,34 +5,22 @@
 #                                                     +:+ +:+         +:+      #
 #    By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/08/02 12:36:22 by yquaro            #+#    #+#              #
-#    Updated: 2019/08/03 22:38:51 by yquaro           ###   ########.fr        #
+#    Created: 2019/08/03 22:00:08 by yquaro            #+#    #+#              #
+#    Updated: 2019/08/03 23:11:49 by yquaro           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 include ../includes/libft.mk
+include includes/ft_string.mk
 
-SOURCES = ft_realloc.c ft_memalloc.c ft_memdel.c ft_strdel.c
-OBJECTS = ft_realloc.o ft_memalloc.o ft_memdel.o ft_strdel.o
+all: print
+	@make -C functions/ all
 
-NAME = liballoc.a
-
-
-all: print $(SOURCES) $(NAME)
-	
 print:
-	@echo \*\*\* Compiling ft_alloc
-
-.c.o:
-	$(COMPILING) $< -o $@
-
-$(NAME): $(OBJECTS)
-	@ar rc $(NAME) $(OBJECTS)
-	@ranlib $(NAME)
-	@mv $(NAME) ../lib/$(NAME)
+	@echo \*\*\* Compiling ft_string:
 
 clean:
-	@rm -f $(OBJECTS)
+	@make -C functions/ clean
 
-fclean: clean
-	@rm -f ../lib/$(NAME)
+fclean:
+	@make -C functions/ fclean

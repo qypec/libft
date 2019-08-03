@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: qypec <qypec@student.42.fr>                +#+  +:+       +#+         #
+#    By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/18 01:54:46 by yquaro            #+#    #+#              #
-#    Updated: 2019/07/31 15:35:06 by qypec            ###   ########.fr        #
+#    Updated: 2019/08/03 23:13:50 by yquaro           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ all:
 	ar -x liblist.a
 	ar -x libbuff.a
 	ar -x libmatr.a
+	ar -x libstring.a
 	ar -x libsrc.a
 	@ar rc $(NAME) *.o
 	@ranlib $(NAME)
