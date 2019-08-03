@@ -6,7 +6,7 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 12:05:21 by yquaro            #+#    #+#             */
-/*   Updated: 2019/06/18 00:47:24 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/08/03 19:40:35 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,10 @@
 # include "../ft_ctime/ft_ctime.h"
 # include "../ft_math/ft_math.h"
 # include "../ft_alloc/ft_alloc.h"
-# include "../ft_hashtab/ft_hashtab.h"
-
-typedef struct		s_list
-{
-	void			*content;
-	size_t			content_size;
-	struct s_list	*next;
-}					t_list;
+# include "../ft_map/ft_map.h"
+# include "../ft_list/ft_list.h"
+# include "../ft_buffer/ft_buffer.h"
+# include "../ft_matr/ft_matr.h"
 
 void				*ft_memset (void *destination, int c, size_t n);
 void				*ft_bzero (void *s, size_t n);
@@ -73,33 +69,25 @@ char				**ft_strsplit(char const *s, char c);
 char				*ft_itoa(long long n);
 void				ft_putchar(char c);
 void				ft_putstr(char const *s);
-void				ft_puterror(const char *s);
 void				ft_putendl(char const *s);
 void				ft_putnbr(int n);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char const *s, int fd);
 void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
-t_list				*ft_lstnew(const void *content, size_t content_size);
-void				ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
-void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
-void				ft_lstadd(t_list **alst, t_list *new);
-void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
-t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 int					ft_isspace(int c);
 int					ft_numblen(long long n);
-char				**ft_matrixfree(char ***ret);
 char				**ft_strswap(char **matrix, int first, int second);
-void				ft_putmatrix(char **str);
 char				*ft_strncut(char *str, int n, char *choice);
 char				*ft_strencut(char *str, int n, char *choice);
 char				*ft_addsymb(char *str, char c, int num);
 char				*ft_addsymbend(char *str, char c, int num);
-char				*ft_strglue(char *str, const char *left, const char *right);
-char				*ft_strnglue(char *str, const char *left, const char *right, size_t n);
+void				ft_strglue(char *puthere, ...);
+void				ft_strlglue(int start, char *puthere, ...);
 char				*ft_stradd(char *str, char c);
 char				*ft_strnadd(char *str, char c, size_t n);
-char				**ft_matrdup(const char **matr);
 size_t				ft_matrlen(const char **matr);
+int					ft_isempty(const char *str);
+int					ft_alnumstr(const char *str);
 
 #endif
