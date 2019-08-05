@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: qypec <qypec@student.42.fr>                +#+  +:+       +#+         #
+#    By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/09 13:11:11 by qypec             #+#    #+#              #
-#    Updated: 2019/07/31 16:12:55 by qypec            ###   ########.fr        #
+#    Updated: 2019/08/05 19:35:46 by yquaro           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 include ../includes/libft.mk
 
-SOURCES = ft_matrdel.c ft_matrdup.c ft_matrmemalloc.c ft_matrnew.c
-OBJECTS = ft_matrdel.o ft_matrdup.o ft_matrmemalloc.o ft_matrnew.o
+SOURCES = ft_matrdel.c ft_matrdup.c ft_matrmemalloc.c ft_matrnew.c ft_matrlen.c
+OBJECTS = ft_matrdel.o ft_matrdup.o ft_matrmemalloc.o ft_matrnew.o ft_matrlen.o
 
 NAME = libmatr.a
 
