@@ -1,0 +1,6 @@
+*.o
+/.vscode
+test.c
+*.a
+/a.out
+/*.dSYM

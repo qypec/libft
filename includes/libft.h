@@ -6,7 +6,7 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 12:05:21 by yquaro            #+#    #+#             */
-/*   Updated: 2019/08/03 23:10:31 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/08/05 19:28:15 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 # include "../ft_list/ft_list.h"
 # include "../ft_buffer/ft_buffer.h"
 # include "../ft_matr/ft_matr.h"
-# include "../ft_string/includes/ft_string.h"
 
 void				*ft_memset (void *destination, int c, size_t n);
 void				*ft_bzero (void *s, size_t n);
