@@ -6,11 +6,11 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/02 12:36:28 by yquaro            #+#    #+#             */
-/*   Updated: 2019/08/02 16:26:47 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/08/07 13:44:51 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_buffer.h"
+#include "libft.h"
 
 void					ft_buffadd(t_buff *buff, const char *str)
 {

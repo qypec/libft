@@ -6,11 +6,12 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/04 19:08:49 by yquaro            #+#    #+#             */
-/*   Updated: 2019/05/04 19:17:06 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/08/07 12:11:22 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ctime.h"
+#include "libft.h"
 
 static char			*digit_to_str(int num)
 {

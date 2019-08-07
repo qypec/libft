@@ -6,11 +6,12 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/03 17:26:35 by yquaro            #+#    #+#             */
-/*   Updated: 2019/05/04 19:18:41 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/08/07 12:11:14 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_ctime.h"
+#include "libft.h"
 
 static int	leapsyear(int year)
 {

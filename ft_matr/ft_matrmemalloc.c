@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_matrmemalloc.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qypec <qypec@student.42.fr>                +#+  +:+       +#+        */
+/*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/31 15:50:35 by qypec             #+#    #+#             */
-/*   Updated: 2019/07/31 16:17:38 by qypec            ###   ########.fr       */
+/*   Updated: 2019/08/07 12:36:39 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_matr.h"
+#include "libft.h"
 
 char				**ft_matrmemalloc(size_t size)
 {

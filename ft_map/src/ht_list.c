@@ -6,11 +6,12 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/14 16:30:10 by yquaro            #+#    #+#             */
-/*   Updated: 2019/08/02 15:02:54 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/08/07 12:19:22 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_map.h"
+#include "libft.h"
 
 static void				default_del(t_hlist *list)
 {

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_matrnew.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qypec <qypec@student.42.fr>                +#+  +:+       +#+        */
+/*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/31 15:38:46 by qypec             #+#    #+#             */
-/*   Updated: 2019/08/03 18:15:18 by qypec            ###   ########.fr       */
+/*   Updated: 2019/08/07 12:36:40 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_matr.h"
+#include "libft.h"
 
 char				**ft_matrnew(size_t matr_size, ...)
 {

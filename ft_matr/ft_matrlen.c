@@ -6,11 +6,11 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 20:24:22 by yquaro            #+#    #+#             */
-/*   Updated: 2019/08/07 11:49:59 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/08/07 12:36:37 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_matr.h"
+#include "libft.h"
 
 size_t					ft_matrlen(const char **matr)
 {

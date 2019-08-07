@@ -6,11 +6,12 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/18 08:04:48 by yquaro            #+#    #+#             */
-/*   Updated: 2019/07/07 06:19:28 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/08/07 12:19:13 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_map.h"
+#include "libft.h"
 
 void					ft_mapinsert(t_map *map, const char *key, \
 										const void *value)

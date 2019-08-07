@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_matrdel.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qypec <qypec@student.42.fr>                +#+  +:+       +#+        */
+/*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/31 16:11:07 by qypec             #+#    #+#             */
-/*   Updated: 2019/07/31 16:16:11 by qypec            ###   ########.fr       */
+/*   Updated: 2019/08/07 12:36:34 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_matr.h"
+#include "libft.h"
 
 void				*ft_matrdel(char ***ret)
 {

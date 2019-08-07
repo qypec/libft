@@ -6,7 +6,7 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 12:05:21 by yquaro            #+#    #+#             */
-/*   Updated: 2019/08/05 19:28:15 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/08/07 14:51:17 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,115 @@
 
 # include <stddef.h>
 # include <stdlib.h>
+# include <stdarg.h>
+# include <time.h>
+# include <unistd.h>
+
+/*
+** ft_alloc
+*/
+
+void					*ft_realloc(void *ptr, size_t newsize);
+void					*ft_memalloc(size_t size);
+void					ft_memdel(void **ap);
+void					ft_strdel(char **as);
+
+/*
+** ft_buffer
+*/
+
+typedef struct			s_buff
+{
+	char				*str;
+	int					i;
+	int					totalsize;
+	int					additional_size;
+}						t_buff;
+
+t_buff					*ft_buffinit(int size);
+void					ft_buffaddsymb(t_buff *buff, char c);
+void					ft_buffadd(t_buff *buff, const char *str);
+void					ft_buffladd(t_buff *buff, const char *str, int len);
+void					ft_buffdel(t_buff **buff);
+
+/*
+** ft_ctime
+*/
+
 # include "../ft_ctime/ft_ctime.h"
-# include "../ft_math/ft_math.h"
-# include "../ft_alloc/ft_alloc.h"
+
+char				*ft_ctime(const time_t *ttime);
+t_cdate				*ft_uctime(const time_t *ttime);
+void				free_uctime(t_cdate *date);
+
+/*
+** ft_list
+*/
+
+typedef struct					s_list
+{
+	char						*content;
+	struct s_list				*next;
+}								t_list;
+
+void							ft_lstdel(t_list **head);
+void							default_lstdel(t_list *list);
+t_list							*ft_lstdelone(t_list *head, t_list *dellist);
+void							ft_lstadd(t_list **alst, t_list *new);
+void							ft_lstpushback(t_list **head, t_list *new);
+t_list							*ft_lstnew(const char *content);
+int								ft_listsize(t_list *head);
+
+/*
+** ft_map
+*/
+
 # include "../ft_map/ft_map.h"
-# include "../ft_list/ft_list.h"
-# include "../ft_buffer/ft_buffer.h"
-# include "../ft_matr/ft_matr.h"
+
+typedef struct			s_map
+{
+	t_hlist				**head;
+	int					size;
+	void				*hashfunc;
+}						t_map;
+
+t_map					*ft_mapnew(void *hashfunc_ptr, int size);
+int						ft_ismapitem(t_map *map, const char *key);
+const char				*ft_mapvalue(const t_map *map, const char *key);
+void					ft_mapinsert(t_map *map, const char *key, \
+										const void *value);
+void					ft_mapdelone(t_map *map, const char *key);
+void					ft_mapdel(t_map **map);
+void					ft_putmap(t_map *map);
+
+/*
+** ft_math
+*/
+
+int								ft_abs(int num);
+int								ft_pow(int num, int power);
+
+/*
+** ft_matr
+*/
+
+char					**ft_matrnew(size_t matr_size, ...);
+char					**ft_matrmemalloc(size_t size);
+char					**ft_matrdup(const char *first_str, ...);
+void					*ft_matrdel(char ***ret);
+size_t					ft_matrlen(const char **matr);
+
+/*
+** ft_printf
+*/
+
+# include "../ft_printf/ft_printf.h"
+
+int					ft_printf(const char *format, ...);
+
+/*
+** other functions
+*/
 
 void				*ft_memset (void *destination, int c, size_t n);
 void				*ft_bzero (void *s, size_t n);

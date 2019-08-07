@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_ctime.h"
+#include "libft.h"
 
 static char			*glue_str(t_cdate *date, char *str)
 {

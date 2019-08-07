@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_matrdup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qypec <qypec@student.42.fr>                +#+  +:+       +#+        */
+/*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 20:30:01 by yquaro            #+#    #+#             */
-/*   Updated: 2019/08/03 18:33:22 by qypec            ###   ########.fr       */
+/*   Updated: 2019/08/07 12:36:36 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_matr.h"
+#include "libft.h"
 
 char					**ft_matrdup(const char *first_str, ...)
 {

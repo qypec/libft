@@ -6,11 +6,11 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 13:55:46 by yquaro            #+#    #+#             */
-/*   Updated: 2019/07/25 17:36:42 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/08/07 12:35:38 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_math.h"
+#include "libft.h"
 
 int		ft_pow(int num, int power)
 {

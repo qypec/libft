@@ -6,11 +6,12 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/15 18:11:40 by yquaro            #+#    #+#             */
-/*   Updated: 2019/07/07 06:27:31 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/08/07 12:18:57 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_map.h"
+#include "libft.h"
 #define MIN_LONG_LONG -9223372036854775807
 
 static long long		aabs(long long num)

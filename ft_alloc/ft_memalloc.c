@@ -6,11 +6,11 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 19:18:31 by yquaro            #+#    #+#             */
-/*   Updated: 2019/08/02 18:09:42 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/08/07 12:16:32 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_alloc.h"
+#include "libft.h"
 
 void	*ft_memalloc(size_t size)
 {

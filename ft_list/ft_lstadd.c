@@ -6,11 +6,11 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 21:29:25 by yquaro            #+#    #+#             */
-/*   Updated: 2019/07/07 06:28:18 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/08/07 12:15:59 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list.h"
+#include "libft.h"
 
 void				ft_lstadd(t_list **alst, t_list *new)
 {

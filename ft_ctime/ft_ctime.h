@@ -6,14 +6,13 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/01 18:34:50 by yquaro            #+#    #+#             */
-/*   Updated: 2019/08/02 14:50:40 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/08/07 13:17:22 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_CTIME_H
 # define FT_CTIME_H
 
-# include "../includes/libft.h"
 # include <time.h>
 
 # define WEEKDAY_OF_JANUARY_1ST_1970 4

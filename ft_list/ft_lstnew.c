@@ -6,11 +6,11 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/24 15:42:42 by yquaro            #+#    #+#             */
-/*   Updated: 2019/08/02 16:27:40 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/08/07 12:16:07 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list.h"
+#include "libft.h"
 
 t_list				*ft_lstnew(const char *content)
 {

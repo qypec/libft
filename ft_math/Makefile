@@ -6,32 +6,24 @@
 #    By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/02 12:36:22 by yquaro            #+#    #+#              #
-#    Updated: 2019/08/02 16:27:55 by yquaro           ###   ########.fr        #
+#    Updated: 2019/08/07 14:19:58 by yquaro           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 include ../includes/libft.mk
 
 SOURCES = ft_abs.c ft_pow.c
-OBJECTS = ft_abs.o ft_pow.o
+OBJECTS = $(addprefix $(DIR_O)/,$(patsubst %.c,%.o,$(SOURCES)))
 
-NAME = libmath.a
-
-all: print $(SOURCES) $(NAME)
+all: print $(OBJECTS)
 	
 print:
 	@echo \*\*\* Compiling ft_math
 
-.c.o:
+$(DIR_O)/%.o: %.c
 	$(COMPILING) $< -o $@
 
-$(NAME): $(OBJECTS)
-	@ar rc $(NAME) $(OBJECTS)
-	@ranlib $(NAME)
-	@mv $(NAME) ../lib/$(NAME)
-
 clean:
-	@rm -f $(OBJECTS)
+	@rm -f ../lib/$(OBJECTS)
 
 fclean: clean
-	@rm -f ../lib/$(NAME)

@@ -6,25 +6,15 @@
 #    By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/18 01:54:46 by yquaro            #+#    #+#              #
-#    Updated: 2019/08/05 19:28:32 by yquaro           ###   ########.fr        #
+#    Updated: 2019/08/07 14:46:02 by yquaro           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
 all:
-	@echo \*\*\* Reassembly libraries from libft
-	ar -x liballoc.a
-	ar -x libctime.a
-	ar -x libhashtab.a
-	ar -x libmath.a
-	ar -x liblist.a
-	ar -x libbuff.a
-	ar -x libmatr.a
-	ar -x libsrc.a
 	@ar rc $(NAME) *.o
 	@ranlib $(NAME)
-	@rm -f __.SYMDEF\ SORTED
 	@mv $(NAME) ../$(NAME)
 	@echo \*\*\* LIBFT COMPILED!
 

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_buffer.h"
+#include "libft.h"
 
 t_buff					*ft_buffinit(int size)
 {

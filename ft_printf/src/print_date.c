@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_matr.h                                          :+:      :+:    :+:   */
+/*   print_date.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/31 15:32:02 by qypec             #+#    #+#             */
-/*   Updated: 2019/08/05 19:35:58 by yquaro           ###   ########.fr       */
+/*   Created: 2019/07/25 17:55:46 by yquaro            #+#    #+#             */
+/*   Updated: 2019/08/07 12:43:52 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_MATR_H
-# define FT_MATR_H
+#include "libft.h"
+#include "ft_printf.h"
 
-#include "../includes/libft.h"
+void				print_date(void)
+{
+	time_t			ttime;
+	char			*time_str;
 
-char					**ft_matrnew(size_t matr_size, ...);
-char					**ft_matrmemalloc(size_t size);
-char					**ft_matrdup(const char *first_str, ...);
-void					*ft_matrdel(char ***ret);
-size_t					ft_matrlen(const char **matr);
-
-#endif
+	ttime = time(NULL);
+	time_str = ft_ctime(&ttime);
+	ft_buffadd(g_output, time_str);
+	ft_strdel(&time_str);
+}
