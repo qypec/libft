@@ -5,34 +5,36 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/31 15:38:46 by qypec             #+#    #+#             */
-/*   Updated: 2019/08/07 12:36:40 by yquaro           ###   ########.fr       */
+/*   Created: 2019/06/13 20:30:01 by yquaro            #+#    #+#             */
+/*   Updated: 2019/08/13 18:38:53 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char				**ft_matrnew(size_t matr_size, ...)
+char					**ft_matrnew(const char *first_str, ...)
 {
-	char			**matr;
-	va_list			arg;
-	size_t			str_size;
-	int				i;
+	char				**matr;
+	va_list				arg;
+	int					number_of_elements;
+	int					i;
 
-	va_start(arg, matr_size);
-	if ((matr = (char **)malloc(sizeof(char *) * (matr_size + 1))) == NULL)
+	if (first_str == NULL)
 		return (NULL);
+	va_start(arg, first_str);
+	number_of_elements = 1;
+	while (va_arg(arg, char*) != NULL)
+		number_of_elements++;
+	va_end(arg);
+	if ((matr = (char **)malloc(sizeof(char *) * \
+							(number_of_elements + 1))) == NULL)
+		return (NULL);
+	matr[number_of_elements] = NULL;
+	va_start(arg, first_str);
+	matr[0] = ft_strdup(first_str);
 	i = 1;
-	while (i < (int)matr_size)
-	{
-		str_size = va_arg(arg, size_t);
-		if ((matr[i++] = (char *)ft_memalloc(sizeof(char) * (str_size + 1))) == NULL)
-		{
-			ft_matrdel(&matr);
-			return (NULL);
-		}
-	}
-	matr[i] = NULL;
+	while (--number_of_elements)
+		matr[i++] = ft_strdup(va_arg(arg, char *));
 	va_end(arg);
 	return (matr);
 }

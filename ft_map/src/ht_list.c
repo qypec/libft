@@ -6,7 +6,7 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/14 16:30:10 by yquaro            #+#    #+#             */
-/*   Updated: 2019/08/07 12:19:22 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/08/08 21:29:13 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 static void				default_del(t_hlist *list)
 {
 	list->next = NULL;
-	list->key = NULL;
-	list->value = NULL;
+	ft_strdel(&(list->key));
+	ft_strdel((char **)&(list->value));
 	free(list);
 	list = NULL;
 }

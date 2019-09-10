@@ -6,7 +6,7 @@
 #    By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/02 12:36:28 by yquaro            #+#    #+#              #
-#    Updated: 2019/08/07 14:36:01 by yquaro           ###   ########.fr        #
+#    Updated: 2019/08/07 15:10:47 by yquaro           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,6 @@ compile_src:
 
 $(DIR_O)/%.o: %.c
 	$(COMPILING) $< -o $@
-
 
 clean:
 	@rm -f ../lib/$(OBJECTS)

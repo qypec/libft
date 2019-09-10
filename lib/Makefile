@@ -6,7 +6,7 @@
 #    By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/18 01:54:46 by yquaro            #+#    #+#              #
-#    Updated: 2019/08/07 14:46:02 by yquaro           ###   ########.fr        #
+#    Updated: 2019/09/10 17:39:22 by yquaro           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = libft.a
 all:
 	@ar rc $(NAME) *.o
 	@ranlib $(NAME)
-	@mv $(NAME) ../$(NAME)
+	#@mv $(NAME) ../$(NAME)
 	@echo \*\*\* LIBFT COMPILED!
 
 clean:

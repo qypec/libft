@@ -5,35 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/13 20:30:01 by yquaro            #+#    #+#             */
-/*   Updated: 2019/08/07 12:36:36 by yquaro           ###   ########.fr       */
+/*   Created: 2019/08/07 16:42:23 by yquaro            #+#    #+#             */
+/*   Updated: 2019/08/08 18:35:21 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char					**ft_matrdup(const char *first_str, ...)
+char				**ft_matrdup(const char **matr)
 {
-	char				**matr;
-	va_list				arg;
-	int					number_of_elements;
-	int					i;
+	char			**newmatr;
+	size_t			matr_size;
+	int				i;
 
-	if (first_str == NULL)
+	matr_size = ft_matrlen(matr);
+	if ((newmatr = (char **)malloc(sizeof(char *) * (matr_size + 1))) == NULL)
 		return (NULL);
-	va_start(arg, first_str);
-	number_of_elements = 1;
-	while (va_arg(arg, char*) != NULL)
-		number_of_elements++;
-	va_end(arg);
-	if ((matr = (char **)malloc(sizeof(char *) * (number_of_elements + 1))) == NULL)
-		return (NULL);
-	matr[number_of_elements] = NULL;
-	va_start(arg, first_str);
-	matr[0] = ft_strdup(first_str);
-	i = 1;
-	while (--number_of_elements)
-		matr[i++] = ft_strdup(va_arg(arg, char *));
-	va_end(arg);
-	return (matr);
+	i = 0;
+	while (i < (int)matr_size)
+	{
+		newmatr[i] = ft_strdup(matr[i]);
+		i++;
+	}
+	newmatr[i] = NULL;
+	return (newmatr);
 }

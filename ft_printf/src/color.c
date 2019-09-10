@@ -6,7 +6,7 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/06 14:23:51 by yquaro            #+#    #+#             */
-/*   Updated: 2019/08/07 12:44:34 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/08/10 14:07:55 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 void				init_color(void)
 {
 	g_color = ft_mapnew(NULL, 20);
-	ft_mapinsert(g_color, "reset", RESET_COLOR_CODE);
-	ft_mapinsert(g_color, "red", RED_COLOR_CODE);
-	ft_mapinsert(g_color, "green", GREEN_COLOR_CODE);
-	ft_mapinsert(g_color, "yellow", YELLOW_COLOR_CODE);
-	ft_mapinsert(g_color, "blue", BLUE_COLOR_CODE);
-	ft_mapinsert(g_color, "magenta", MAGENTA_COLOR_CODE);
-	ft_mapinsert(g_color, "cyan", CYAN_COLOR_CODE);
+	ft_mapinsert(g_color, ft_strdup("reset"), ft_strdup(RESET_COLOR_CODE));
+	ft_mapinsert(g_color, ft_strdup("red"), ft_strdup(RED_COLOR_CODE));
+	ft_mapinsert(g_color, ft_strdup("green"), ft_strdup(GREEN_COLOR_CODE));
+	ft_mapinsert(g_color, ft_strdup("yellow"), ft_strdup(YELLOW_COLOR_CODE));
+	ft_mapinsert(g_color, ft_strdup("blue"), ft_strdup(BLUE_COLOR_CODE));
+	ft_mapinsert(g_color, ft_strdup("magenta"), ft_strdup(MAGENTA_COLOR_CODE));
+	ft_mapinsert(g_color, ft_strdup("cyan"), ft_strdup(CYAN_COLOR_CODE));
 }
 
 static int			check_param(char *traverse)

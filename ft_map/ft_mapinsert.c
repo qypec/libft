@@ -32,6 +32,7 @@ void					ft_mapinsert(t_map *map, const char *key, \
 	{
 		if (ft_strcmp((const char *)(*tmp)->key, key) == 0)
 		{
+			ft_strdel((char **)&((*tmp)->value));
 			(*tmp)->value = (void *)value;
 			return ;
 		}

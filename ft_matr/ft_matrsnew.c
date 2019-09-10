@@ -1,36 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_getvalue.c                                      :+:      :+:    :+:   */
+/*   ft_matrsnew.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/02 12:36:22 by yquaro            #+#    #+#             */
-/*   Updated: 2019/08/07 12:18:52 by yquaro           ###   ########.fr       */
+/*   Created: 2019/07/31 15:38:46 by qypec             #+#    #+#             */
+/*   Updated: 2019/08/23 22:01:28 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_map.h"
 #include "libft.h"
 
-const char			*ft_mapvalue(const t_map *map, const char *key)
+char				**ft_matrsnew(size_t matr_size, size_t line_size)
 {
-	int					hash;
-	int					(*hash_func)(const char *, int);
-	t_hlist				*tmp;
+	char			**matr;
+	int				i;
 
-	hash_func = map->hashfunc;
-	hash = hash_func(key, map->size);
-	tmp = map->head[hash];
-	if (tmp == NULL)
+	if ((matr = (char **)malloc(sizeof(char *) * (matr_size + 1))) == NULL)
 		return (NULL);
-	while (tmp != NULL)
+	i = 0;
+	while (i < (int)matr_size)
 	{
-		if (ft_strcmp((const char *)tmp->key, key) == 0)
-			return ((const char *)tmp->value);
-		if (tmp->next == NULL)
-			break ;
-		tmp = tmp->next;
+		if ((matr[i++] = (char *)ft_memalloc(sizeof(char) * \
+												(line_size + 1))) == NULL)
+		{
+			ft_matrdel(&matr);
+			return (NULL);
+		}
 	}
-	return (NULL);
+	matr[i] = NULL;
+	return (matr);
 }
