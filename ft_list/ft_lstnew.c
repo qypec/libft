@@ -6,13 +6,13 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/24 15:42:42 by yquaro            #+#    #+#             */
-/*   Updated: 2019/09/10 12:43:54 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/09/10 17:45:51 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list				*ft_lstnew(const void *content, void *delfunc)
+t_list				*ft_lstnew(void *content, void *delfunc)
 {
 	t_list				*list;
 

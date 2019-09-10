@@ -6,7 +6,7 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 12:05:21 by yquaro            #+#    #+#             */
-/*   Updated: 2019/09/10 11:40:44 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/09/10 17:44:33 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ t_list					*ft_lstdelone(t_list *head, t_list *dellist);
 void					ft_lstdelfirst(t_list **head);
 void					ft_lstadd(t_list **alst, t_list *new);
 void					ft_lstpushback(t_list **head, t_list *new);
-t_list					*ft_lstnew(const void *content, void *delfunc);
+t_list					*ft_lstnew(void *content, void *delfunc);
 int						ft_listsize(t_list *head);
 
 /*
