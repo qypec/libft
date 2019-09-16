@@ -6,7 +6,7 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/02 21:51:48 by yquaro            #+#    #+#             */
-/*   Updated: 2018/12/05 21:44:43 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/09/16 15:31:44 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,8 @@
 
 void	ft_putendl(char const *s)
 {
-	int i;
-
-	i = 0;
 	if (!s)
 		return ;
-	while (s[i] != '\0')
-	{
-		write(1, &s[i], 1);
-		i++;
-	}
+	ft_putstr(s);
 	write(1, "\n", 1);
 }

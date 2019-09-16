@@ -6,7 +6,7 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 12:05:21 by yquaro            #+#    #+#             */
-/*   Updated: 2019/09/13 11:06:52 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/09/16 11:54:20 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,7 +143,6 @@ char					*ft_strcpy(char *dst, const char *src);
 char					*ft_strncpy(char *dst, const char *src, size_t len);
 char					*ft_strcat(char *str, const char *tail);
 char					*ft_strncat(char *str, const char *tail, size_t n);
-size_t					ft_strlcat(char *dst, const char *src, size_t size);
 const char				*ft_strchr(const char *s, int c);
 char					*ft_strrchr(const char *s, int c);
 char					*ft_strstr(const char *s1, const char *s2);
