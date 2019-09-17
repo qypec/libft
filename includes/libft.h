@@ -6,7 +6,7 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 12:05:21 by yquaro            #+#    #+#             */
-/*   Updated: 2019/09/16 11:54:20 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/09/17 15:45:21 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,17 +63,23 @@ void					free_uctime(t_cdate *date);
 typedef struct			s_list
 {
 	void				*content;
-	void				*delfunc;
+	size_t				content_size;
 	struct s_list		*next;
 }						t_list;
 
-void					ft_lstdel(t_list **head);
-t_list					*ft_lstdelone(t_list *head, t_list *dellist);
-void					ft_lstdelfirst(t_list **head);
+t_list					*ft_lstnew(void *content, size_t content_size);
 void					ft_lstadd(t_list **alst, t_list *new);
-void					ft_lstpushback(t_list **head, t_list *new);
-t_list					*ft_lstnew(void *content, void *delfunc);
-int						ft_listsize(t_list *head);
+void					ft_lstaddhere(t_list **alst, t_list *new, size_t position);
+void					ft_lstpushback(t_list **alst, t_list *new);
+void					ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+void					ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
+void					ft_lstdelthis(t_list **alst, size_t lstnum, \
+													void (*del)(void *, size_t));
+void					ft_lstdeltail(t_list **alst, void (*del)(void *, size_t));
+void					ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+t_list					*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+void					ft_lstprint(t_list *alst, void (*print)(void *));
+size_t					ft_lstsize(t_list *alst);
 
 /*
 ** ft_map

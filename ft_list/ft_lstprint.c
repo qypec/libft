@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstprint.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/13 15:35:49 by yquaro            #+#    #+#             */
-/*   Updated: 2019/09/16 15:26:25 by yquaro           ###   ########.fr       */
+/*   Created: 2019/09/17 09:53:17 by yquaro            #+#    #+#             */
+/*   Updated: 2019/09/17 10:43:42 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
-
-int				main(void)
+void				ft_lstprint(t_list *alst, void (*print)(void *))
 {
-	char		*str;
-	char		*needle;
+	size_t			i;
 
-	// str = ft_strdup("fgahjfhjaf");
-	// needle = ft_strdup("67890");
-	ft_printf("%w\n", ft_strsplit("bbb", 'b'));
-	// printf("str = |%s|\n", str);
-	// printf("needle = %s\n", needle);
+	i = 0;
+	while (alst != NULL)
+	{
+		ft_printf("[%zu] content:\n[\n  ", i++);
+		print(alst->content);
+		ft_printf("\n]");
+		ft_printf("\ncontent_size: %d\n\n", alst->content_size);
+		alst = alst->next;
+	}
 }

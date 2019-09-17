@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_listsize.c                                      :+:      :+:    :+:   */
+/*   ft_lstaddhere.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/03 20:30:00 by yquaro            #+#    #+#             */
-/*   Updated: 2019/08/07 12:15:57 by yquaro           ###   ########.fr       */
+/*   Created: 2019/09/17 10:40:31 by yquaro            #+#    #+#             */
+/*   Updated: 2019/09/17 10:49:42 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int					ft_listsize(t_list *head)
+void				ft_lstaddhere(t_list **alst, t_list *new, size_t position)
 {
-	t_list			*tmp;
-	int				len;
-
-	tmp = head;
-	len = 0;
-	while (tmp != NULL)
+	while (*alst != NULL && position)
 	{
-		len++;
-		tmp = tmp->next;
+		alst = &(*alst)->next;
+		position--;
 	}
-	return (len);
+	if (position == 0)
+	{
+		new->next = *alst;
+		*alst = new;
+	}
 }

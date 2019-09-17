@@ -6,11 +6,11 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/02 21:42:47 by yquaro            #+#    #+#             */
-/*   Updated: 2019/09/16 15:31:09 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/09/16 18:01:40 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 void	ft_putstr(char const *s)
 {

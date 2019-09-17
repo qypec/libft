@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelfirst.c                                   :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/09 16:30:22 by yquaro            #+#    #+#             */
-/*   Updated: 2019/09/09 19:58:43 by yquaro           ###   ########.fr       */
+/*   Created: 2019/09/17 11:56:42 by yquaro            #+#    #+#             */
+/*   Updated: 2019/09/17 15:45:28 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void				ft_lstdelfirst(t_list **head)
+t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	t_list			*tmp;
-	void			(*delfunc)(t_list *list);
+	t_list			*newlst;
 
-	if (head == NULL)
-		return ;
-	tmp = *head;
-	(*head) = (*head)->next;
-	delfunc = tmp->delfunc;
-	delfunc(tmp);
+	while (lst != NULL)
+	{
+		if ((newlst = f(lst)) == NULL)
+			return (ft_lstdel(newlst));
+		ft_lstpushback(&newlst, f(lst));
+		lst = lst->next;
+	}
+	return (newlst);
 }
