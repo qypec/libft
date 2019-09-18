@@ -25,7 +25,7 @@ SOURCES = ft_atoi.c ft_bzero.c \
 			ft_strncmp.c ft_strncpy.c ft_strncut.c ft_strnequ.c ft_strnew.c \
 			ft_strlglue.c ft_strnstr.c ft_strrchr.c ft_strsplit.c ft_strstr.c \
 			ft_strsub.c ft_strswap.c ft_strtrim.c ft_tolower.c ft_toupper.c \
-			ft_isempty.c ft_alnumstr.c get_next_line.c
+			ft_isempty.c ft_alnumstr.c get_next_line.c ft_strequ.c
 OBJECTS = $(addprefix $(DIR_O)/,$(patsubst %.c,%.o,$(SOURCES)))
 
 all: print $(OBJECTS)

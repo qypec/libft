@@ -6,7 +6,7 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 15:58:05 by oargrave          #+#    #+#             */
-/*   Updated: 2019/08/07 12:44:46 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/09/18 09:53:14 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ static int			take_str_before_persent(char **traverse)
 	trav = *traverse;
 	while (*trav != '%' && *trav != '\0')
 	{
-		if (*trav == '{')
-		{
-			take_color(&trav);
-			continue ;
-		}
+		// if (*trav == '{')
+		// {
+		// 	take_color(&trav);
+		// 	continue ;
+		// }
 		ft_buffaddsymb(g_output, *trav);
 		trav++;
 	}

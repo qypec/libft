@@ -6,7 +6,7 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 12:05:21 by yquaro            #+#    #+#             */
-/*   Updated: 2019/09/17 15:45:21 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/09/18 19:58:46 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,18 +89,18 @@ size_t					ft_lstsize(t_list *alst);
 
 typedef struct			s_map
 {
-	t_hlist				**head;
-	int					size;
-	void				*hashfunc;
+	t_list				**array;
+	size_t				size;
+	void				*valuedel_func;
 }						t_map;
 
-t_map					*ft_mapnew(void *hashfunc_ptr, int size);
-int						ft_ismapitem(t_map *map, const char *key);
-const char				*ft_mapvalue(const t_map *map, const char *key);
-void					ft_mapinsert(t_map *map, const char *key, \
-										const void *value);
-void					ft_mapdelone(t_map *map, const char *key);
-void					ft_mapdel(t_map **map);
+t_map				*ft_mapinit(size_t mapsize, void *valuedel_func);
+void				ft_mapinsert(t_map **map, const char *key, void *value);
+const void			*ft_mapvalue(t_map *map, const char *key);
+void				ft_mapdel(t_map **map);
+void				ft_mapdelind(t_map **map, size_t index);
+void				ft_mapdelkey(t_map **map, const char *key);
+void				ft_putmap(t_map *map, void (*printvalue)(void *));
 
 /*
 ** ft_math
