@@ -6,7 +6,7 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 12:05:21 by yquaro            #+#    #+#             */
-/*   Updated: 2019/09/18 19:58:46 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/09/19 10:44:01 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,7 @@ typedef struct			s_map
 
 t_map				*ft_mapinit(size_t mapsize, void *valuedel_func);
 void				ft_mapinsert(t_map **map, const char *key, void *value);
+int					ft_ismapitem(t_map *map, const char *key);
 const void			*ft_mapvalue(t_map *map, const char *key);
 void				ft_mapdel(t_map **map);
 void				ft_mapdelind(t_map **map, size_t index);

@@ -5,29 +5,26 @@
 #                                                     +:+ +:+         +:+      #
 #    By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/06/14 13:54:33 by yquaro            #+#    #+#              #
-#    Updated: 2019/09/19 10:51:44 by yquaro           ###   ########.fr        #
+#    Created: 2019/09/19 10:48:36 by yquaro            #+#    #+#              #
+#    Updated: 2019/09/19 10:52:17 by yquaro           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-include ../includes/libft.mk
+include ../../includes/libft.mk
 
-SOURCES = ft_mapinit.c ft_mapinsert.c ft_putmap.c ft_mapvalue.c ft_mapdel.c \
-			ft_mapdelind.c ft_mapdelkey.c ft_ismapitem.c
+LIBFT_H = -I ../../includes/
+CTIME_H = -I ../
+COMPILING = $(CC) $(CFLAGS) $(LIBFT_H) $(CTIME_H)
+
+DIR_O = ../../lib
+SOURCES = hashfunc.c print_htab.c htab.c
 OBJECTS = $(addprefix $(DIR_O)/,$(patsubst %.c,%.o,$(SOURCES)))
 
-all: print compile_src $(OBJECTS)
-	
-print:
-	@echo \*\*\* Compiling ft_map
-
-compile_src:
-	@make -C src/ all
+all: $(OBJECTS)
+	@true
 
 $(DIR_O)/%.o: %.c
-	$(COMPILING) $< -o $@
+	@$(COMPILING) $< -o $@
 
 clean:
-	@rm -f ../lib/$(OBJECTS)
-
-fclean: clean
+	@rm -f ../../lib/$(OBJECTS)
