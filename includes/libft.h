@@ -6,7 +6,7 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 12:05:21 by yquaro            #+#    #+#             */
-/*   Updated: 2019/09/19 10:44:01 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/09/19 11:11:49 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,6 +120,7 @@ char					**ft_matrsnew(size_t matr_size, size_t line_size);
 char					**ft_matrmemalloc(size_t size);
 char					**ft_matrnew(const char *first_str, ...);
 char					**ft_matrdup(const char **matr);
+void					ft_strswap(char **matr, int first, int second);
 void					*ft_matrdel(char ***ret);
 size_t					ft_matrlen(const char **matr);
 
@@ -192,7 +193,6 @@ void					ft_putendl_fd(char const *s, int fd);
 void					ft_putnbr_fd(int n, int fd);
 int						ft_isspace(int c);
 int						ft_numblen(long long n);
-char					**ft_strswap(char **matrix, int first, int second);
 char					*ft_strncut(char *str, int n, char *choice);
 char					*ft_strencut(char *str, int n, char *choice);
 char					*ft_addsymb(char *str, char c, int num);
@@ -200,9 +200,7 @@ char					*ft_addsymbend(char *str, char c, int num);
 void					ft_strglue(char *puthere, ...);
 void					ft_strlglue(int start, char *puthere, ...);
 char					*ft_stradd(char *str, char c);
-char					*ft_strnadd(char *str, char c, size_t n);
 size_t					ft_matrlen(const char **matr);
 int						ft_isempty(const char *str);
-int						ft_alnumstr(const char *str);
 
 #endif
