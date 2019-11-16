@@ -6,7 +6,7 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/23 18:21:54 by yquaro            #+#    #+#             */
-/*   Updated: 2019/09/02 16:59:58 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/11/16 15:56:16 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int					get_next_line(const int fd, char **line)
 		reading_status = ret;
 	else
 		reading_status--;
-	*line = ft_strdup(buff->str);
+	*line = ft_strdup(buff->line);
 	ft_buffdel(&buff);
 	return (reading_status);
 }

@@ -34,8 +34,8 @@ void					ft_strdel(char **as);
 
 typedef struct			s_buff
 {
-	char				*str;
-	int					i;
+	char				*line;
+	int					size;
 	int					totalsize;
 	int					additional_size;
 }						t_buff;
