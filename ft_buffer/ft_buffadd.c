@@ -6,7 +6,7 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/02 12:36:28 by yquaro            #+#    #+#             */
-/*   Updated: 2019/11/16 16:21:06 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/11/16 16:30:25 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void					ft_buffadd(t_buff *buff, const char *str)
 ** @return		N/A
 */
 
-void					ft_buffladd(t_buff *buff, const char *str, int len)
+void					ft_buffladd(t_buff *buff, const char *str, size_t len)
 {
 	size_t				size_of_new_str;
 	size_t				remaining_size;
