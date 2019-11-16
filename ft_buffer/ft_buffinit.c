@@ -6,7 +6,7 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/02 14:51:44 by yquaro            #+#    #+#             */
-/*   Updated: 2019/11/16 16:01:03 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/11/16 16:37:59 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 ** @return		buff	pointer to buff struct
 */
 
-t_buff					*ft_buffinit(int size)
+t_buff					*ft_buffinit(size_t size)
 {
 	t_buff				*buff;
 

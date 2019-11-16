@@ -40,7 +40,7 @@ typedef struct			s_buff
 	size_t				additional_size;
 }						t_buff;
 
-t_buff					*ft_buffinit(int size);
+t_buff					*ft_buffinit(size_t size);
 void					ft_buffaddsymb(t_buff *buff, char c);
 void					ft_buffadd(t_buff *buff, const char *str);
 void					ft_buffladd(t_buff *buff, const char *str, size_t len);
