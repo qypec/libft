@@ -2,7 +2,7 @@
 
 Библиотека для работы со строками неопределенного размера.
 
-Структура:
+#### Структура:
 ```
 typedef struct      s_buff
 {
@@ -13,14 +13,24 @@ typedef struct      s_buff
 }                   t_buff;
 ```
 
-Функции:
+#### Функции:
 
-* `t_buff					*ft_buffinit(int size);`
+* `t_buff					*ft_buffinit(size_t size);`
+  
+  Инициализация структуры, выделение памяти
 
 * `void					ft_buffaddsymb(t_buff *buff, char c);`
   
+  Добавление символа
+  
 * `void					ft_buffadd(t_buff *buff, const char *str);`
+  
+  Добавление строки
 
-* `void					ft_buffladd(t_buff *buff, const char *str, int len);`
+* `void					ft_buffladd(t_buff *buff, const char *str, size_t len);`
+  
+  Добавление строки определенного размера
 
 * `void					ft_buffdel(t_buff **buff);`
+  
+  Освобождение памяти, удаление
