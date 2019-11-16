@@ -22,8 +22,8 @@
 
 void					ft_buffaddsymb(t_buff *buff, char c)
 {
-	int					size_of_new_str;
-	int					remaining_size;
+	size_t				size_of_new_str;
+	size_t				remaining_size;
 
 	remaining_size = buff->totalsize - buff->size;
 	size_of_new_str = 1;
