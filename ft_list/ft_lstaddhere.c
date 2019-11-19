@@ -6,11 +6,20 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 10:40:31 by yquaro            #+#    #+#             */
-/*   Updated: 2019/09/17 10:49:42 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/11/19 13:50:43 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** Adds an item to the specified position.
+**
+** @param 		alst		head of list
+** @param		new			new item
+** @param		position	position to add
+** @return		N/A
+*/
 
 void				ft_lstaddhere(t_list **alst, t_list *new, size_t position)
 {

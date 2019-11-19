@@ -6,11 +6,19 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/24 15:42:42 by yquaro            #+#    #+#             */
-/*   Updated: 2019/09/18 13:36:16 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/11/19 13:48:02 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** Deletes a list item
+**
+** @param		alst	head of list
+** @param		del
+** @return		N/A
+*/
 
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
 {

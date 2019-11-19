@@ -6,11 +6,19 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/02 21:29:25 by yquaro            #+#    #+#             */
-/*   Updated: 2019/09/17 10:40:17 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/11/19 13:51:35 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** Adds an item to the top of the list.
+**
+** @param 		alst		head of list
+** @param		new			new item
+** @return		N/A
+*/
 
 void				ft_lstadd(t_list **alst, t_list *new)
 {

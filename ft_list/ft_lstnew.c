@@ -6,11 +6,19 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/24 15:42:42 by yquaro            #+#    #+#             */
-/*   Updated: 2019/09/17 09:40:55 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/11/19 13:40:03 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** Create a new linked list item
+**
+** @param 		content
+** @param		content_size	size of content
+** @return		list			pointer to the item
+*/
 
 t_list				*ft_lstnew(void *content, size_t content_size)
 {
