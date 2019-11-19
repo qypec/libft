@@ -6,12 +6,21 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 19:15:43 by yquaro            #+#    #+#             */
-/*   Updated: 2019/09/18 13:56:34 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/11/19 12:57:45 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "ft_map.h"
+
+/*
+** Inserts a value of a hash table by key.
+** If a value for this key already exists, the function replace it.
+**
+** @param 		key
+** @param 		value
+** @return		N/A
+*/
 
 void				ft_mapinsert(t_map **map, const char *key, void *value)
 {

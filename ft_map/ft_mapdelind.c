@@ -6,7 +6,7 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/18 11:36:17 by yquaro            #+#    #+#             */
-/*   Updated: 2019/09/18 19:55:48 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/11/19 13:06:06 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,13 @@ static void			dellst(void *content, size_t content_size)
 	free(content);
 	content = NULL;
 }
+
+/*
+** Delete a hash table value by index 
+**
+** @param		index
+** @return		N/A
+*/
 
 void				ft_mapdelind(t_map **map, size_t index)
 {

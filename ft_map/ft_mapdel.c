@@ -6,12 +6,19 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/18 11:34:56 by yquaro            #+#    #+#             */
-/*   Updated: 2019/09/18 16:23:57 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/11/19 13:06:39 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "ft_map.h"
+
+/*
+** Frees the hash table structure.
+**
+** @param 		map		pointer to structure
+** @return		N/A
+*/
 
 void				ft_mapdel(t_map **map)
 {

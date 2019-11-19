@@ -6,12 +6,19 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/15 19:40:07 by yquaro            #+#    #+#             */
-/*   Updated: 2019/09/18 18:19:04 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/11/19 13:03:28 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_map.h"
 #include "libft.h"
+
+/*
+** Display map
+**
+** @param 		printvalue	pointer to function that prints value of table
+** @return		N/A
+*/
 
 void					ft_putmap(t_map *map, void (*printvalue)(void *))
 {

@@ -6,12 +6,20 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 18:06:25 by yquaro            #+#    #+#             */
-/*   Updated: 2019/09/18 13:30:52 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/11/19 12:54:14 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "ft_map.h"
+
+/*
+** Initialization of the hashtable structure.
+**
+** @param 		mapsize			initial size
+** @param		valudel_func	pointer to delete function hash table value
+** @return		map				pointer to hash table structure
+*/
 
 t_map				*ft_mapinit(size_t mapsize, void *valuedel_func)
 {
