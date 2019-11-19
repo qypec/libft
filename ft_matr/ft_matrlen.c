@@ -6,11 +6,18 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 20:24:22 by yquaro            #+#    #+#             */
-/*   Updated: 2019/08/07 12:36:37 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/11/19 16:15:55 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** Calculate number of strings in array
+**
+** @param 		matr		pointer to array of strings
+** @return		len			number of string
+*/
 
 size_t					ft_matrlen(const char **matr)
 {

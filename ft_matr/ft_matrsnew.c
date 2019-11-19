@@ -6,11 +6,19 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/31 15:38:46 by qypec             #+#    #+#             */
-/*   Updated: 2019/08/23 22:01:28 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/11/19 16:10:27 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** Create a string array
+**
+** @param 		matr_size						number of strings
+** @param 		line_size						size of strings
+** @return		matr							pointer to a string array
+*/
 
 char				**ft_matrsnew(size_t matr_size, size_t line_size)
 {

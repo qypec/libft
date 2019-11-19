@@ -6,11 +6,18 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/31 16:11:07 by qypec             #+#    #+#             */
-/*   Updated: 2019/08/23 18:22:50 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/11/19 16:18:50 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** Frees the string array.
+**
+** @param 		ret
+** @return		N/A
+*/
 
 void				*ft_matrdel(char ***ret)
 {

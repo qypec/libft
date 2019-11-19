@@ -6,11 +6,18 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/13 20:30:01 by yquaro            #+#    #+#             */
-/*   Updated: 2019/08/13 18:38:53 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/11/19 16:08:58 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+** Create a string array
+**
+** @param 		first_str, second_str ...		lines
+** @return		matr							pointer to a string array
+*/
 
 char					**ft_matrnew(const char *first_str, ...)
 {
