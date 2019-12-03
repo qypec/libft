@@ -8,7 +8,7 @@ typedef struct           s_map
 {
 	t_list           **array;		// массив односвязных списков
 	size_t           size;			// размер таблицы
-  void     *hashfunc; // указатель на хеш-функцию
+	void             *hashfunc;             // указатель на хеш-функцию
 	void		 *valuedel_func;	// указатель на функцию для удаления значения
 }			 t_map;
 ```
