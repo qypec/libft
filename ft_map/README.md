@@ -8,6 +8,7 @@ typedef struct           s_map
 {
 	t_list           **array;		// массив односвязных списков
 	size_t           size;			// размер таблицы
+  void     *hashfunc; // указатель на хеш-функцию
 	void		 *valuedel_func;	// указатель на функцию для удаления значения
 }			 t_map;
 ```
@@ -27,7 +28,7 @@ typedef struct           s_htab
 
 #### Функции:
 
-* `t_map                  *ft_mapinit(size_t mapsize, void *valuedel_func);`
+* `t_map                 *ft_mapinit(size_t mapsize, void *hash_func, void *valuedel_func);`
   
   Инициализация структуры, выделение памяти
 

@@ -6,7 +6,7 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/18 19:20:57 by yquaro            #+#    #+#             */
-/*   Updated: 2019/11/19 13:05:17 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/11/29 09:24:35 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,13 @@ static void			dellst(void *content, size_t content_size)
 
 void				ft_mapdelkey(t_map **map, const char *key)
 {
+	int				(*hashfunc)(const char *, int );
 	void			(*valuedel)(void **);
 	t_list			**maplst;
 	t_list			*tmp;
 
-	maplst = &((*map)->array[hashfunction(key, (*map)->size)]);
+	hashfunc = (*map)->hashfunc;
+	maplst = &((*map)->array[hashfunc(key, (*map)->size)]);
 	valuedel = (*map)->valuedel_func;
 	while (*maplst != NULL)
 	{

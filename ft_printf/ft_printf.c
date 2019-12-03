@@ -6,7 +6,7 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 15:58:05 by oargrave          #+#    #+#             */
-/*   Updated: 2019/09/19 11:01:02 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/11/29 09:33:41 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ static int			take_str_before_persent(char **traverse)
 
 static void			output(size_t *size)
 {
-	*size = g_output->i;
-	write(1, g_output->str, g_output->i);
+	*size = g_output->size;
+	write(1, g_output->line, g_output->size);
 }
 
 static void			totalfree(void)

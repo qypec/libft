@@ -6,7 +6,7 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/01 20:08:03 by oargrave          #+#    #+#             */
-/*   Updated: 2019/08/07 12:44:14 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/11/29 09:33:13 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void			getend(t_part *part)
 	int			size_buff;
 	int			i;
 
-	size_buff = part->middle->i + ft_strlen(part->first);
+	size_buff = part->middle->size + ft_strlen(part->first);
 	if ((num_indents = g_spec->width - size_buff) < 0)
 		return ;
 	if ((part->last = (char *)malloc(sizeof(char) * (num_indents + 1))) == NULL)

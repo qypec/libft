@@ -6,7 +6,7 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/02 16:32:41 by yquaro            #+#    #+#             */
-/*   Updated: 2019/08/07 12:44:40 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/11/29 09:32:56 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,11 @@ void			getnumber(t_part *part, long double num)
 void			fill_parts_float(t_part *part, long double num)
 {
 	getnumber(part, num);
-	ft_rounding(part->middle->str, part->middle->i - 1, part);
-	getfirst(part, part->middle->i);
+	ft_rounding(part->middle->line, part->middle->size - 1, part);
+	getfirst(part, part->middle->size);
 	getend(part);
 	ft_buffadd(g_output, part->first);
-	ft_buffadd(g_output, part->middle->str);
+	ft_buffadd(g_output, part->middle->line);
 	ft_buffadd(g_output, part->last);
 	partdel(&part);
 }

@@ -6,7 +6,7 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 19:15:43 by yquaro            #+#    #+#             */
-/*   Updated: 2019/11/19 12:57:45 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/12/03 11:08:23 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,10 @@ void				ft_mapinsert(t_map **map, const char *key, void *value)
 {
 	t_list			**maplst;
 	void			(*valuedel)(void **);
+	int				(*hashfunc)(const char *, int );
 
-	maplst = &((*map)->array[hashfunction(key, (*map)->size)]);
+	hashfunc = (*map)->hashfunc;
+	maplst = &((*map)->array[hashfunc(key, (*map)->size)]);
 	while (*maplst != NULL)
 	{
 		if (ft_strequ(((t_htab *)((*maplst)->content))->key, key))

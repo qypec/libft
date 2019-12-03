@@ -6,7 +6,7 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/06 14:23:51 by yquaro            #+#    #+#             */
-/*   Updated: 2019/09/19 10:59:42 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/11/29 09:31:53 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void				init_color(void)
 {
-	g_color = ft_mapinit(20, &ft_strdel);
+	g_color = ft_mapinit(20, NULL, &ft_strdel);
 	ft_mapinsert(&g_color, "reset", ft_strdup(RESET_COLOR_CODE));
 	ft_mapinsert(&g_color, "red", ft_strdup(RED_COLOR_CODE));
 	ft_mapinsert(&g_color, "green", ft_strdup(GREEN_COLOR_CODE));
