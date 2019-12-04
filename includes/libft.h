@@ -6,7 +6,7 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 12:05:21 by yquaro            #+#    #+#             */
-/*   Updated: 2019/12/03 11:13:52 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/12/04 21:32:47 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,9 +91,12 @@ typedef struct			s_map
 {
 	t_list				**array;
 	size_t				size;
+	size_t				numof_items;
 	void				*hashfunc;
 	void				*valuedel_func;
 }						t_map;
+
+void				map_reindexing(t_map **map);
 
 t_map				*ft_mapinit(size_t mapsize, void *hash_func, \
 						void *valuedel_func);

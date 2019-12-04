@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_mapdelind.c                                     :+:      :+:    :+:   */
+/*   map_reindexing.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/18 11:36:17 by yquaro            #+#    #+#             */
-/*   Updated: 2019/12/03 21:30:06 by yquaro           ###   ########.fr       */
+/*   Created: 2019/12/03 21:30:57 by yquaro            #+#    #+#             */
+/*   Updated: 2019/12/03 22:02:09 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,37 +16,38 @@
 static void			dellst(void *content, size_t content_size)
 {
 	ft_strdel(&(((t_htab *)content)->key));
+	((t_htab *)content)->value = NULL;
 	content_size = 0;
 	free(content);
 	content = NULL;
 }
 
-/*
-** Delete a hash table value by index 
-**
-** @param		index
-** @return		N/A
-*/
-
-void				ft_mapdelind(t_map **map, size_t index)
+void				map_reindexing(t_map **map)
 {
-	void			(*valuedel)(void **);
+	t_map			*newmap;
 	t_list			**maplst;
-	t_list			*tmp;
+	size_t			i;
 
-	if (index > (*map)->size)
-		return ;
-	if ((*map)->array[index] == NULL)
-		return ;
-	maplst = &((*map)->array[index]);
-	valuedel = (*map)->valuedel_func;
-	while (*maplst != NULL)
+	newmap = ft_mapinit(((*map)->size * EXPANSION_COEFFICIENT), \
+		(*map)->hashfunc, (*map)->valuedel_func);
+	i = 0;
+	while (i < (*map)->size)
 	{
-		valuedel(&(((t_htab *)((*maplst)->content))->value));
-		tmp = (*maplst)->next;
-		ft_lstdelone(maplst, dellst);
-		*maplst = tmp;
-		(*map)->numof_items--;
+		maplst = &((*map)->array[i]);
+		while (*maplst != NULL)
+		{
+			ft_mapinsert(&newmap, \
+				((const char *)((t_htab *)((*maplst)->content))->key), \
+					((t_htab *)((*maplst)->content))->value);
+			ft_lstdelthis(maplst, 0, dellst);
+		}
+		i++;
 	}
-	(*map)->array[index] = NULL;
+	free((*map)->array);
+	(*map)->array = NULL;
+	(*map)->size = 0;
+	(*map)->valuedel_func = NULL;
+	free(*map);
+	*map = NULL;
+	*map = newmap;
 }

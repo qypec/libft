@@ -6,7 +6,7 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/18 19:20:57 by yquaro            #+#    #+#             */
-/*   Updated: 2019/11/29 09:24:35 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/12/03 21:46:11 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ void				ft_mapdelkey(t_map **map, const char *key)
 			tmp = (*maplst)->next;
 			ft_lstdelone(maplst, dellst);
 			*maplst = tmp;
+			(*map)->numof_items--;
 			return ;
 		}
 		maplst = &(*maplst)->next;

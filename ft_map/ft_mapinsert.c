@@ -6,7 +6,7 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 19:15:43 by yquaro            #+#    #+#             */
-/*   Updated: 2019/12/03 11:08:23 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/12/03 22:01:48 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,9 @@ void				ft_mapinsert(t_map **map, const char *key, void *value)
 		maplst = &(*maplst)->next;
 	}
 	*maplst = ft_lstnew(init_htab(key, value), sizeof(t_htab *));
+	(*map)->numof_items++;
+	// ft_printf("")
+	// ft_printf("%Lf\n", ((*map)->numof_items / (*map)->size));
+	if (((*map)->numof_items / (double)(*map)->size) > 0.6)
+		map_reindexing(map);
 }

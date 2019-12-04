@@ -6,12 +6,14 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 19:12:31 by yquaro            #+#    #+#             */
-/*   Updated: 2019/11/29 09:23:18 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/12/03 21:55:18 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_MAP_H
 # define FT_MAP_H
+
+# define EXPANSION_COEFFICIENT 4
 
 typedef struct			s_htab
 {

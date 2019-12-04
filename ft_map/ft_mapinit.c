@@ -6,7 +6,7 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 18:06:25 by yquaro            #+#    #+#             */
-/*   Updated: 2019/12/03 11:08:13 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/12/03 21:49:30 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ t_map				*ft_mapinit(size_t mapsize, void *hash_func, \
 	if ((map = (t_map *)malloc(sizeof(t_map))) == NULL)
 		return (NULL);
 	map->size = mapsize;
+	map->numof_items = 0;
 	map->hashfunc = hash_func;
 	if (hash_func == NULL)
 		map->hashfunc = &hashfunction;
