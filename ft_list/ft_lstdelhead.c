@@ -1,36 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstaddhere.c                                    :+:      :+:    :+:   */
+/*   ft_lstdelhead.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/17 10:40:31 by yquaro            #+#    #+#             */
-/*   Updated: 2019/12/04 21:55:51 by yquaro           ###   ########.fr       */
+/*   Created: 2019/12/04 21:51:52 by yquaro            #+#    #+#             */
+/*   Updated: 2019/12/04 22:01:02 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-** Adds an item to the specified position.
-**
-** @param 		alst		head of list
-** @param		new			new item
-** @param		position	position to add
-** @return		N/A
-*/
-
-void				ft_lstaddhere(t_list **alst, t_list *new, size_t position)
+void				ft_lstdelhead(t_list **alst, void (*del)(void *, size_t))
 {
-	while (*alst != NULL && position)
-	{
-		alst = &(*alst)->next;
-		position--;
-	}
-	if (position == 0)
-	{
-		new->next = *alst;
-		*alst = new;
-	}
+	t_list				*tmp;
+
+	tmp = (*alst)->next;
+	ft_lstdelone(alst, del);
+	*alst = tmp;
 }

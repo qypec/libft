@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstprint.c                                      :+:      :+:    :+:   */
+/*   ft_putlst.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 09:53:17 by yquaro            #+#    #+#             */
-/*   Updated: 2019/11/19 13:39:53 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/12/04 22:08:21 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,16 @@
 ** @return		N/A
 */
 
-void				ft_lstprint(t_list *alst, void (*print)(void *))
+void				ft_putlst(t_list *alst, void (*print)(void *))
 {
 	size_t			i;
 
 	i = 0;
+	if (alst == NULL)
+	{
+		ft_putendl("(empty list)");
+		return ;
+	}
 	while (alst != NULL)
 	{
 		ft_printf("[%zu] content:\n[\n  ", i++);

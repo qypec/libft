@@ -6,7 +6,7 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 12:05:21 by yquaro            #+#    #+#             */
-/*   Updated: 2019/12/04 21:32:47 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/12/04 22:23:09 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,10 +75,11 @@ void					ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void					ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void					ft_lstdelthis(t_list **alst, size_t lstnum, \
 													void (*del)(void *, size_t));
+void					ft_lstdelhead(t_list **alst, void (*del)(void *, size_t));
 void					ft_lstdeltail(t_list **alst, void (*del)(void *, size_t));
 void					ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list					*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
-void					ft_lstprint(t_list *alst, void (*print)(void *));
+void					ft_putlst(t_list *alst, void (*print)(void *));
 size_t					ft_lstsize(t_list *alst);
 
 /*

@@ -6,7 +6,7 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 10:04:21 by yquaro            #+#    #+#             */
-/*   Updated: 2019/11/19 13:45:45 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/12/04 22:01:27 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,5 @@ void				ft_lstdelthis(t_list **alst, size_t lstnum, \
 		lstnum--;
 	}
 	if (lstnum == 0 && *alst != NULL)
-	{
-		tmp = (*alst)->next;
-		ft_lstdelone(alst, del);
-		*alst = tmp;
-	}
+		ft_lstdelhead(alst, del);
 }

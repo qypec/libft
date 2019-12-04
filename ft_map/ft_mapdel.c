@@ -6,7 +6,7 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/18 11:34:56 by yquaro            #+#    #+#             */
-/*   Updated: 2019/12/04 21:34:27 by yquaro           ###   ########.fr       */
+/*   Updated: 2019/12/04 22:05:57 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void				ft_mapdel(t_map **map)
 	free((*map)->array);
 	(*map)->array = NULL;
 	(*map)->size = 0;
-	(*map)->numbof_indexing = 0;
+	(*map)->numof_items = 0;
 	(*map)->valuedel_func = NULL;
 	free(*map);
 	*map = NULL;
