@@ -34,6 +34,10 @@ typedef struct                  s_list
   
   Освобождение памяти, удаление всего списка
 
+* `void                         ft_lstdelhead(t_list **alst, void (*del)(void *, size_t));`
+  
+  Освобождение памяти, удаление первого элемента списка
+
 * `void                         ft_lstdelone(t_list **alst, void (*del)(void *, size_t));`
   
   Освобождение памяти, удаление одного элемента
@@ -54,7 +58,7 @@ typedef struct                  s_list
   
   Возвращает указатель на новый список (копию `lst`), к каждому элементу которого применена функция `f`
 
-* `void                         ft_lstprint(t_list *alst, void (*print)(void *));`
+* `void                         ft_putlst(t_list *alst, void (*print)(void *));`
   
   Вывод на экран
 
