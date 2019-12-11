@@ -12,4 +12,8 @@ int						compare_this(t_list *actual, const char *str_expected);
 
 void					test_ft_list(void);
 
+void					test_ft_map(void);
+
+void					delete_map(t_map **map);
+
 #endif
