@@ -2,6 +2,7 @@
 # define UNIT_TEST_H
 
 # include "../../includes/libft.h"
+# include "../../ft_map/ft_map.h"
 
 void					del_strcontent(void *content, size_t content_size);
 
@@ -14,6 +15,8 @@ void					test_ft_list(void);
 
 void					test_ft_map(void);
 
+void					create_map(t_map **map, const char *input);
+int						compare_maps(t_map **map, const char *expected);
 void					delete_map(t_map **map);
 
 #endif

@@ -46,3 +46,48 @@ void				delete_map(t_map **map)
 	free(*map);
 	*map = NULL;
 }
+
+static void			map_insert(t_map **map, const char *key, void *value)
+{
+	t_list			**maplst;
+	void			(*valuedel)(void **);
+	int				(*hashfunc)(const char *, int );
+
+	hashfunc = (*map)->hashfunc;
+	maplst = &((*map)->array[hashfunc(key, (*map)->size)]);
+	while (*maplst != NULL)
+	{
+		if (ft_strequ(((t_htab *)((*maplst)->content))->key, key))
+		{
+			valuedel = (*map)->valuedel_func;
+			valuedel(&(((t_htab *)((*maplst)->content))->value));
+			((t_htab *)((*maplst)->content))->value = value;
+			return ;
+		}
+		maplst = &(*maplst)->next;
+	}
+	*maplst = ft_lstnew(init_htab(key, value), sizeof(t_htab *));
+	(*map)->numof_items++;
+	if (((*map)->numof_items / (double)(*map)->size) > 0.6)
+		map_reindexing(map);
+}
+
+void				create_map(t_map **map, const char *input)
+{
+	char			**items;
+	char			**key_value;
+	const char		*key;
+	size_t			i;
+
+	items = ft_strsplit(input, '|');
+	i = 0;
+	while (items[i] != NULL)
+	{
+		key_value = ft_strsplit(items[i], ' ');
+		key = key_value[0];
+		map_insert(map, key, ft_strdup(key_value[1]));
+		ft_matrdel(&key_value);
+		i++;
+	}
+	ft_matrdel(&items);
+}
