@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qypec <qypec@student.42.fr>                +#+  +:+       +#+        */
+/*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 12:05:21 by yquaro            #+#    #+#             */
-/*   Updated: 2019/12/12 00:29:17 by qypec            ###   ########.fr       */
+/*   Updated: 2019/12/19 13:35:39 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,9 +112,13 @@ void				ft_putmap(t_map *map, void (*printvalue)(void *));
 /*
 ** ft_math
 */
-
+# define IS_EVEN(num) (num % 2 == 0) ? 1 : 0
+# define MAX_INT 2147483647
+# define MIN_INT -2147483648
+# define IS_INT_OVERFLOW(num) (num > MAX_INT || num < MIN_INT) ? 1 : 0
 # define ROUND_DOWN(number) ((int)number)
 
+int						ft_round_up(float num);
 int						ft_abs(int num);
 int						ft_pow(int num, int power);
 
@@ -126,6 +130,7 @@ char					**ft_matrsnew(size_t matr_size, size_t line_size);
 char					**ft_matrmemalloc(size_t size);
 char					**ft_matrnew(const char *first_str, ...);
 char					**ft_matrdup(const char **matr);
+int						ft_ismatritem(char **matr, const char *item);
 void					ft_strswap(char **matr, int first, int second);
 void					*ft_matrdel(char ***ret);
 size_t					ft_matrlen(const char **matr);
@@ -143,6 +148,7 @@ int						ft_printf(const char *format, ...);
 */
 
 int						get_next_line(const int fd, char **line);
+void					ft_qsort(int *array, size_t size);
 void					*ft_memset (void *destination, int c, size_t n);
 void					*ft_bzero (void *s, size_t n);
 void					*ft_memcpy(void *dst, const void *src, size_t n);
@@ -166,6 +172,7 @@ int						ft_strncmp(const char *s1, const char *s2, size_t n);
 int						ft_atoi(const char *str);
 int						ft_isalpha(int c);
 int						ft_isdigit(int c);
+int 	                ft_is_digitline(const char *line);
 int						ft_isalnum(int c);
 int						ft_isascii(int c);
 int						ft_isprint(int c);
