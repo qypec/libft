@@ -6,7 +6,7 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/31 15:50:35 by qypec             #+#    #+#             */
-/*   Updated: 2019/11/19 16:14:16 by yquaro           ###   ########.fr       */
+/*   Updated: 2020/01/03 14:09:42 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ char				**ft_matrmemalloc(size_t size)
 	char			**matr;
 	int				i;
 
+	if (size == 0)
+		return (NULL);
 	if ((matr = (char **)malloc(sizeof(char *) * size)) == NULL)
 		return (NULL);
 	i = 0;
