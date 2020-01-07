@@ -6,7 +6,7 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 12:05:21 by yquaro            #+#    #+#             */
-/*   Updated: 2019/12/19 13:35:39 by yquaro           ###   ########.fr       */
+/*   Updated: 2020/01/06 16:00:42 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,6 +148,7 @@ int						ft_printf(const char *format, ...);
 */
 
 int						get_next_line(const int fd, char **line);
+size_t					ft_arraymin(int *arr, size_t size);
 void					ft_qsort(int *array, size_t size);
 void					*ft_memset (void *destination, int c, size_t n);
 void					*ft_bzero (void *s, size_t n);

@@ -6,13 +6,13 @@
 #    By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/08/03 20:02:41 by yquaro            #+#    #+#              #
-#    Updated: 2019/12/19 13:16:14 by yquaro           ###   ########.fr        #
+#    Updated: 2020/01/06 15:44:14 by yquaro           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 include ../includes/libft.mk
 
-SOURCES = ft_atoi.c ft_bzero.c \
+SOURCES = ft_atoi.c ft_bzero.c ft_arraymin.c \
 			ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c \
 			ft_is_digitline.c \
 			ft_isspace.c ft_itoa.c ft_memccpy.c \
