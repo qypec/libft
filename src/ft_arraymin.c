@@ -6,13 +6,13 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 15:39:37 by yquaro            #+#    #+#             */
-/*   Updated: 2020/01/06 16:00:03 by yquaro           ###   ########.fr       */
+/*   Updated: 2020/01/10 17:38:12 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t                 ft_arraymin(int *arr, size_t size)
+size_t                 ft_arraymin(size_t *arr, size_t size)
 {
     size_t          i;
     size_t          tmp;
