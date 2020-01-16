@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_mapinsert.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: qypec <qypec@student.42.fr>                +#+  +:+       +#+        */
+/*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 19:15:43 by yquaro            #+#    #+#             */
-/*   Updated: 2019/12/11 23:30:09 by qypec            ###   ########.fr       */
+/*   Updated: 2020/01/17 01:36:39 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void				ft_mapinsert(t_map **map, const char *key, void *value)
 {
 	t_list			**maplst;
 	void			(*valuedel)(void **);
-	int				(*hashfunc)(const char *, int );
+	int				(*hashfunc)(const char *, int);
 
 	hashfunc = (*map)->hashfunc;
 	maplst = &((*map)->array[hashfunc(key, (*map)->size)]);

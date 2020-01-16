@@ -6,7 +6,7 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/02 14:13:16 by yquaro            #+#    #+#             */
-/*   Updated: 2019/09/18 15:43:01 by yquaro           ###   ########.fr       */
+/*   Updated: 2020/01/17 01:46:00 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ size_t				get_split_len(char **str, int c)
 {
 	size_t			len;
 	char			*s;
-	
+
 	while (**str == c && **str != '\0')
 		(*str)++;
 	s = *str;
@@ -37,7 +37,7 @@ size_t				get_split_len(char **str, int c)
 char				**ft_strsplit(char const *s, char c)
 {
 	char			**matr;
-	const char 		*c_ptr;
+	const char		*c_ptr;
 	size_t			len;
 	size_t			i;
 

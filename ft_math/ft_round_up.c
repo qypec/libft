@@ -6,7 +6,7 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/19 13:07:21 by yquaro            #+#    #+#             */
-/*   Updated: 2019/12/19 13:07:23 by yquaro           ###   ########.fr       */
+/*   Updated: 2020/01/17 01:37:19 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ int						ft_round_up(float num)
 	res = num - (int)num;
 	if (res == 0.0)
 		return ((int)num);
-	else 
+	else
 		return ((int)(num + 1));
 }

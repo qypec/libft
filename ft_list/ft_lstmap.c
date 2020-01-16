@@ -6,14 +6,14 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 11:56:42 by yquaro            #+#    #+#             */
-/*   Updated: 2019/11/19 13:43:04 by yquaro           ###   ########.fr       */
+/*   Updated: 2020/01/17 01:33:47 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Applies function to each item in a list and 
+** Applies function to each item in a list and
 ** returns a pointer to a new linked list.
 **
 ** @param 		lst			head of list

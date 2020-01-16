@@ -6,13 +6,14 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/20 15:42:27 by oargrave          #+#    #+#             */
-/*   Updated: 2019/08/13 15:08:04 by yquaro           ###   ########.fr       */
+/*   Updated: 2020/01/17 01:54:12 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
+#include "../includes/libft.h"
 # define END_OF_STRING 1
 # define PRECISION 1
 # define WIDTH 2

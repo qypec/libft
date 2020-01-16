@@ -6,7 +6,7 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/18 11:36:17 by yquaro            #+#    #+#             */
-/*   Updated: 2019/12/11 16:16:01 by yquaro           ###   ########.fr       */
+/*   Updated: 2020/01/17 01:35:05 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void			dellst(void *content, size_t content_size)
 }
 
 /*
-** Delete a hash table value by index 
+** Delete a hash table value by index
 **
 ** @param		index
 ** @return		N/A

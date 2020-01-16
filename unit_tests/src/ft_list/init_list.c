@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init_list.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/01/17 01:46:15 by yquaro            #+#    #+#             */
+/*   Updated: 2020/01/17 01:47:18 by yquaro           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "unit_test.h"
 
 static t_list			*listnew(void *content, size_t content_size)
@@ -19,9 +31,9 @@ static void				listpushback(t_list **alst, t_list *new)
 {
 	if (new == NULL)
 		return ;
- 	while (*alst != NULL)
-    	alst = &(*alst)->next;
-    *alst = new;
+	while (*alst != NULL)
+		alst = &(*alst)->next;
+	*alst = new;
 }
 
 t_list					*create_list(const char *str_items)
@@ -41,7 +53,8 @@ t_list					*create_list(const char *str_items)
 	return (list);
 }
 
-static void				delete_head_item(t_list **alst, void (*del)(void *, size_t))
+static void				delete_head_item(t_list **alst, \
+							void (*del)(void *, size_t))
 {
 	t_list				*tmp;
 
@@ -56,7 +69,7 @@ static void				delete_head_item(t_list **alst, void (*del)(void *, size_t))
 void					delete_list(t_list **alst, void (*del)(void *, size_t))
 {
 	t_list				*tmp;
-	
+
 	while (*alst != NULL)
 		delete_head_item(alst, del);
 }

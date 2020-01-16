@@ -6,14 +6,14 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/02 12:36:28 by yquaro            #+#    #+#             */
-/*   Updated: 2019/11/16 16:30:25 by yquaro           ###   ########.fr       */
+/*   Updated: 2020/01/17 01:32:57 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Adds a line to the buffer. 
+** Adds a line to the buffer.
 ** If there is not enough memory, then realloc it.
 **
 ** @param 		str		string to be added to the buffer
@@ -40,7 +40,7 @@ void					ft_buffadd(t_buff *buff, const char *str)
 }
 
 /*
-** Adds a line to the buffer. 
+** Adds a line to the buffer.
 ** If there is not enough memory, then realloc it.
 **
 ** @param 		str		string to be added to the buffer

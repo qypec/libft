@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   compare_maps.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/01/17 01:47:42 by yquaro            #+#    #+#             */
+/*   Updated: 2020/01/17 01:48:02 by yquaro           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "unit_test.h"
 
 static const void		*mapvalue(t_map *map, const char *key)
 {
 	t_list			*maplst;
-	int				(*hashfunc)(const char *, int );
+	int				(*hashfunc)(const char *, int);
 
 	hashfunc = map->hashfunc;
 	maplst = map->array[hashfunc(key, map->size)];

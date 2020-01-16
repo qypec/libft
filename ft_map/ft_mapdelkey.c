@@ -6,7 +6,7 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/18 19:20:57 by yquaro            #+#    #+#             */
-/*   Updated: 2019/12/03 21:46:11 by yquaro           ###   ########.fr       */
+/*   Updated: 2020/01/17 01:36:25 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void			dellst(void *content, size_t content_size)
 }
 
 /*
-** Delete a hash table value by key 
+** Delete a hash table value by key
 **
 ** @param		key
 ** @return		N/A
@@ -30,7 +30,7 @@ static void			dellst(void *content, size_t content_size)
 
 void				ft_mapdelkey(t_map **map, const char *key)
 {
-	int				(*hashfunc)(const char *, int );
+	int				(*hashfunc)(const char *, int);
 	void			(*valuedel)(void **);
 	t_list			**maplst;
 	t_list			*tmp;

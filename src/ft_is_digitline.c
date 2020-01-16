@@ -6,13 +6,13 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/19 13:01:53 by yquaro            #+#    #+#             */
-/*   Updated: 2019/12/19 13:46:00 by yquaro           ###   ########.fr       */
+/*   Updated: 2020/01/17 01:38:15 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int                 ft_is_digitline(const char *line)
+int					ft_is_digitline(const char *line)
 {
 	size_t			i;
 

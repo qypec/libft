@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init_map.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/01/17 01:49:37 by yquaro            #+#    #+#             */
+/*   Updated: 2020/01/17 01:50:19 by yquaro           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "unit_test.h"
 
 static void			dellst(void *content, size_t content_size)
@@ -8,7 +20,7 @@ static void			dellst(void *content, size_t content_size)
 	content = NULL;
 }
 
-static void				delete_mapind(t_map **map, size_t index)
+static void			delete_mapind(t_map **map, size_t index)
 {
 	void			(*valuedel)(void **);
 	t_list			**maplst;
@@ -51,7 +63,7 @@ static void			map_insert(t_map **map, const char *key, void *value)
 {
 	t_list			**maplst;
 	void			(*valuedel)(void **);
-	int				(*hashfunc)(const char *, int );
+	int				(*hashfunc)(const char *, int);
 
 	hashfunc = (*map)->hashfunc;
 	maplst = &((*map)->array[hashfunc(key, (*map)->size)]);

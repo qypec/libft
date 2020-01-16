@@ -6,14 +6,14 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/02 12:36:28 by yquaro            #+#    #+#             */
-/*   Updated: 2019/11/16 15:57:04 by yquaro           ###   ########.fr       */
+/*   Updated: 2020/01/17 01:32:37 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Adds a symbol to the buffer. 
+** Adds a symbol to the buffer.
 ** If there is not enough memory, then realloc it.
 **
 ** @param 		c		symbol to be added to the buffer

@@ -6,7 +6,7 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/19 13:15:02 by yquaro            #+#    #+#             */
-/*   Updated: 2019/12/19 13:15:18 by yquaro           ###   ########.fr       */
+/*   Updated: 2020/01/17 01:40:00 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static void				qs(int *arr, int first, int last)
 		qs(arr, left, last);
 }
 
-void				ft_qsort(int *array, size_t size)
+void					ft_qsort(int *array, size_t size)
 {
 	if (size == 0)
 		return ;

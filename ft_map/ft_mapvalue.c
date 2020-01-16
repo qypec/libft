@@ -6,7 +6,7 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/18 18:30:09 by yquaro            #+#    #+#             */
-/*   Updated: 2019/11/29 09:29:35 by yquaro           ###   ########.fr       */
+/*   Updated: 2020/01/17 01:36:32 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 const void			*ft_mapvalue(t_map *map, const char *key)
 {
 	t_list			*maplst;
-	int				(*hashfunc)(const char *, int );
+	int				(*hashfunc)(const char *, int);
 
 	hashfunc = map->hashfunc;
 	maplst = map->array[hashfunc(key, map->size)];

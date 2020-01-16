@@ -6,7 +6,7 @@
 /*   By: yquaro <yquaro@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/03 21:30:57 by yquaro            #+#    #+#             */
-/*   Updated: 2019/12/03 22:02:09 by yquaro           ###   ########.fr       */
+/*   Updated: 2020/01/17 01:38:00 by yquaro           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,5 @@ void				map_reindexing(t_map **map)
 	(*map)->size = 0;
 	(*map)->valuedel_func = NULL;
 	free(*map);
-	*map = NULL;
 	*map = newmap;
 }
